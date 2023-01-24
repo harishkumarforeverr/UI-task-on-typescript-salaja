@@ -210,7 +210,14 @@ const DrawerSide = (props: any) => {
         display: "flex",
       }}
     >
-      <div>{props.children}</div>
+      <div
+        style={{
+          flexGrow: 1,
+          background: "red",
+        }}
+      >
+        {props.children}
+      </div>
       <div
         style={{
           marginLeft: "auto",
