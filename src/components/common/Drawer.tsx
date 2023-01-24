@@ -113,29 +113,12 @@ const motorObj = [
     subtitle: "0.00",
   },
 ];
-const DrawerSide = ({
-  open,
-  setOpen,
-  drawerType,
-  setDrawerType,
-}: propsType) => {
-  const [placement, setPlacement] = useState<DrawerProps["placement"]>("right");
+const DrawerSide = (props: any) => {
+  const [open, setOpen] = useState(false);
+  const [drawerType, setDrawerType] = useState("");
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
-
-  const handleChange = (event: SelectChangeEvent) => {};
-
-  // const onChange = (e: RadioChangeEvent) => {
-  //   setPlacement(e.target.value)
-  // }
 
   const ControllerFaults = () => {
     return (
@@ -222,177 +205,172 @@ const DrawerSide = ({
     },
   ];
   return (
-    <>
-      <Drawer
-        placement={placement}
-        closable={false}
-        onClose={onClose}
-        open={drawerType == "i2c"}
-        // open={false}
-        key={placement}
-        mask={true}
-        push={true}
+    <div
+      style={{
+        display: "flex",
+      }}
+    >
+      <div>{props.children}</div>
+      <div
         style={{
-          background: "#f2f8fb",
-          position: "relative",
-          width: "24rem",
           marginLeft: "auto",
         }}
+        className="drawerConatiner_Parent"
       >
-        <div>
-          {" "}
-          <div className="Drawer_appConatiner_DashboardConatiner">
-            <div className="appConatiner_drawer">
-              <div
-                onClick={() => {
-                  setDrawerType("");
-                }}
-                className="i2cControl"
-              >
+        <div className="Drawer_appConatiner_DashboardConatiner">
+          <div className="appConatiner_drawer">
+            <div
+              onClick={() => {
+                if (drawerType == "i2c" && open) {
+                  setOpen(false);
+                } else {
+                  setOpen(true);
+                }
+                setDrawerType("i2c");
+              }}
+              className="i2cControl"
+            >
+              {drawerType == "i2c" ? (
                 <RightOutlined className="rightIcon" />
-                <span className="i2cLabel">
-                  <p>C2I </p>
-                </span>
-              </div>
-            </div>
-            <div className="appConatiner_faultsdrawer">
-              <div
-                onClick={() => {
-                  setDrawerType("");
-                }}
-                className="faultsControl"
-              >
-                <RightOutlined className="rightIcon" />
-                <span className="faultsLabel">
-                  <p>Faults</p>
-                </span>
-              </div>
+              ) : (
+                <LeftOutlined className="rightIcon" />
+              )}
+
+              <span className="i2cLabel">
+                <p>C2I </p>
+              </span>
             </div>
           </div>
+          <div className="appConatiner_faultsdrawer">
+            <div
+              onClick={() => {
+                // setOpen(true);
+                if (drawerType == "faults" && open) {
+                  setOpen(false);
+                } else {
+                  setOpen(true);
+                }
+                setDrawerType("faults");
+              }}
+              className="faultsControl"
+            >
+              {drawerType == "faults" ? (
+                <RightOutlined className="rightIcon" />
+              ) : (
+                <LeftOutlined className="rightIcon" />
+              )}
+
+              <span className="faultsLabel">
+                <p>Faults</p>
+              </span>
+            </div>
+          </div>
+        </div>
+        {open && (
           <div>
-            <div className="drawerContainer">
+            {drawerType == "i2c" && (
               <>
-                <Collapse
-                  defaultActiveKey={["1"]}
-                  expandIconPosition="end"
-                  onChange={onChange}
-                >
-                  <Panel header="I2C CONTROLS" key="1">
-                    <div>
-                      <div className="drawerContainer_label">
-                        <p>Speed Control via I2C</p>
-                        <div>
-                          {" "}
-                          <Switch size="small" defaultChecked />{" "}
-                          <span className="Enabled">Enabled </span>
-                        </div>
-                      </div>
-                      <div className="drawerContainer_address">
-                        <div>
-                          <p>I2C Target Address</p>
-                          <Input placeholder="0x2" className="inputTag" />
-                        </div>
-                        <div>
-                          <Button className="btn">Find Address</Button>
-                        </div>
-                      </div>
-                      <div className="drawerContainer_precentage">
-                        <p>I2C Speed Command Percentage</p>
-                        <div>
-                          <Slider marks={marks} step={null} defaultValue={37} />
-                        </div>
-                      </div>
-                      <div></div>
+                <div>
+                  {" "}
+                  <div>
+                    <div className="drawerContainer">
+                      <>
+                        <Collapse
+                          defaultActiveKey={["1"]}
+                          expandIconPosition="end"
+                          onChange={onChange}
+                        >
+                          <Panel header="I2C CONTROLS" key="1">
+                            <div>
+                              <div className="drawerContainer_label">
+                                <p>Speed Control via I2C</p>
+                                <div>
+                                  {" "}
+                                  <Switch size="small" defaultChecked />{" "}
+                                  <span className="Enabled">Enabled </span>
+                                </div>
+                              </div>
+                              <div className="drawerContainer_address">
+                                <div>
+                                  <p>I2C Target Address</p>
+                                  <Input
+                                    placeholder="0x2"
+                                    className="inputTag"
+                                  />
+                                </div>
+                                <div>
+                                  <Button className="btn">Find Address</Button>
+                                </div>
+                              </div>
+                              <div className="drawerContainer_precentage">
+                                <p>I2C Speed Command Percentage</p>
+                                <div>
+                                  <Slider
+                                    marks={marks}
+                                    step={null}
+                                    defaultValue={37}
+                                  />
+                                </div>
+                              </div>
+                              <div></div>
+                            </div>
+                          </Panel>
+                        </Collapse>
+                      </>
                     </div>
-                  </Panel>
-                </Collapse>
-              </>
-            </div>
-            <div className="motorStatusConatiner">
-              <h1>MOTOR STATUS</h1>
-              <p>Algorithm Variable Status Select</p>
-              <div className="selectMotor">
-                <Select
-                  className="selectMotor"
-                  placeholder="Algorithm Variable Status Select"
-                  options={[
-                    { value: "jack", label: "Jack" },
-                    { value: "lucy", label: "Lucy" },
-                    { value: "Yiminghe", label: "yiminghe" },
-                    { value: "disabled", label: "Disabled", disabled: true },
-                  ]}
-                />
-              </div>
-              <div>
-                <div className="motorCardConatiner">
-                  {motorObj.map((moto) => {
-                    return (
-                      <div className="motorCards">
-                        <p> {moto.title}</p>
-                        <h1>{moto.subtitle}</h1>
+                    <div className="motorStatusConatiner">
+                      <h1>MOTOR STATUS</h1>
+                      <p>Algorithm Variable Status Select</p>
+                      <div className="selectMotor">
+                        <Select
+                          className="selectMotor"
+                          placeholder="Algorithm Variable Status Select"
+                          options={[
+                            { value: "jack", label: "Jack" },
+                            { value: "lucy", label: "Lucy" },
+                            { value: "Yiminghe", label: "yiminghe" },
+                            {
+                              value: "disabled",
+                              label: "Disabled",
+                              disabled: true,
+                            },
+                          ]}
+                        />
                       </div>
-                    );
-                  })}
+                      <div>
+                        <div className="motorCardConatiner">
+                          {motorObj.map((moto) => {
+                            return (
+                              <div className="motorCards">
+                                <p> {moto.title}</p>
+                                <h1>{moto.subtitle}</h1>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>{" "}
+                  </div>
                 </div>
-              </div>
-            </div>{" "}
+              </>
+            )}
+            {drawerType == "faults" && (
+              <>
+                <div className="faltsDrawerConatiner">
+                  <div>
+                    <Tabs
+                      defaultActiveKey="1"
+                      items={items}
+                      onChange={onChange}
+                    />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-      </Drawer>
-      <Drawer
-        placement={placement}
-        closable={false}
-        onClose={onClose}
-        // open={open}
-        open={drawerType == "faults"}
-        key={placement}
-        mask={true}
-        push={true}
-        className="faltsDrawerConatiner"
-        style={{
-          background: "#f2f8fb",
-          position: "relative",
-          width: "24rem",
-          marginLeft: "auto",
-          paddingTop: 0,
-        }}
-      >
-        <div>
-          {" "}
-          <div className="Drawer_appConatiner_DashboardConatiner">
-            <div className="appConatiner_drawer">
-              <div
-                onClick={() => {
-                  setDrawerType("");
-                }}
-                className="i2cControl"
-              >
-                <RightOutlined className="rightIcon" />
-                <span className="i2cLabel">
-                  <p>C2I </p>
-                </span>
-              </div>
-            </div>
-            <div className="appConatiner_faultsdrawer">
-              <div
-                onClick={() => {
-                  setDrawerType("");
-                }}
-                className="faultsControl"
-              >
-                <RightOutlined className="rightIcon" />
-                <span className="faultsLabel">
-                  <p>Faults</p>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-          </div>
-        </div>
-      </Drawer>
-    </>
+        )}
+      </div>
+    </div>
   );
 };
 

@@ -166,9 +166,7 @@
 }
 .Drawer_appConatiner_DashboardConatiner {
   .appConatiner_drawer {
-    position: fixed;
-    right: 23.5rem;
-    top: 2rem;
+    margin-bottom: 1.5rem;
   }
   .i2cControl {
     cursor: pointer;
@@ -200,9 +198,6 @@
     }
   }
   .appConatiner_faultsdrawer {
-    position: fixed;
-    right: 23.5rem;
-    top: 8rem;
   }
   .faultsControl {
     cursor: pointer;
@@ -328,6 +323,13 @@
   }
 }
 .faltsDrawerConatiner {
+  background: #f2f8fb;
+  position: relative;
+  width: 24rem;
+  margin-left: auto;
+  height: 100vh;
+  padding-top: 0;
+  padding-left: 8px;
   .ant-drawer-body {
     padding-top: 0;
   }
@@ -408,4 +410,19 @@
 
     background: #cc0000;
   }
+}
+.I2DrawerConatiner {
+  background: #f2f8fb;
+  position: relative;
+  width: 24rem;
+  margin-left: auto;
+}
+.drawerConatiner_Parent {
+  // position: relative;
+  display: flex;
+  // .Drawer_appConatiner_DashboardConatiner {
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  // }
 }
