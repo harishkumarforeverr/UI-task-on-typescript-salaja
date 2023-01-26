@@ -164,73 +164,73 @@
     }
   }
 }
-.Drawer_appConatiner_DashboardConatiner {
-  .appConatiner_drawer {
-    margin-bottom: 1.5rem;
-  }
-  .i2cControl {
-    cursor: pointer;
-    width: 36px;
-    height: 54px;
+// .Drawer_appConatiner_DashboardConatiner {
+//   .appConatiner_drawer {
+//     margin-bottom: 1.5rem;
+//   }
+//   .i2cControl {
+//     cursor: pointer;
+//     width: 36px;
+//     height: 54px;
 
-    background: #ffffff;
-    border-radius: 8px 0px 0px 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 0.4rem;
-    .rightIcon {
-      font-size: 0.81rem;
-    }
-    .i2cLabel {
-      width: 19px;
-      height: 12px;
-      font-family: "Helvetica";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 12px;
-      color: #1c99c4;
+//     background: #ffffff;
+//     border-radius: 8px 0px 0px 8px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 0.5rem;
+//     padding-top: 0.4rem;
+//     .rightIcon {
+//       font-size: 0.81rem;
+//     }
+//     .i2cLabel {
+//       width: 19px;
+//       height: 12px;
+//       font-family: "Helvetica";
+//       font-style: normal;
+//       font-weight: 700;
+//       font-size: 12px;
+//       line-height: 12px;
+//       p {
+//         color: #323232;
+//         writing-mode: vertical-lr;
+//         transform: rotate(180deg);
+//       }
+//     }
+//   }
 
-      p {
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-      }
-    }
-  }
-  // .appConatiner_faultsdrawer {
-  // }
-  .faultsControl {
-    cursor: pointer;
-    width: 36px;
-    height: 66px;
+//   // .appConatiner_faultsdrawer {
+//   // }
+//   .faultsControl {
+//     cursor: pointer;
+//     width: 36px;
+//     height: 66px;
 
-    background: #ffffff;
-    border-radius: 8px 0px 0px 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 0.4rem;
-    .rightIcon {
-      font-size: 0.81rem;
-    }
-    .faultsLabel {
-      width: 19px;
-      height: 12px;
-      font-family: "Helvetica";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 12px;
-      color: #1c99c4;
-
-      p {
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
-      }
-    }
-  }
-}
+//     background: #ffffff;
+//     border-radius: 8px 0px 0px 8px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 0.5rem;
+//     padding-top: 0.4rem;
+//     .rightIcon {
+//       font-size: 0.81rem;
+//     }
+//     .faultsLabel {
+//       width: 19px;
+//       height: 12px;
+//       font-family: "Helvetica";
+//       font-style: normal;
+//       font-weight: 700;
+//       font-size: 12px;
+//       line-height: 12px;
+//       // color: #1c99c4;
+//       p {
+//         color: #323232;
+//         writing-mode: vertical-lr;
+//         transform: rotate(180deg);
+//       }
+//     }
+//   }
+// }
 .motorStatusConatiner {
   background: #f2f8fb;
   border: 1px solid #f2f8fb;
@@ -436,8 +436,8 @@
   box-shadow: 0 6px 16px -8px #00000014, 0 9px 28px #0000000d,
     0 12px 48px 16px #00000008;
   background: white;
-  padding-left: 10px;
-  margin-top: 17px;
+  // padding-left: 10px;
+  margin-top: 2px;
 }
 .drawerBody {
   min-width: 22rem;
@@ -448,22 +448,24 @@
   .appConatiner_drawer {
     position: absolute;
     right: 0;
-    top: 5rem;
-    opacity: 0.5;
+    top: 1rem;
+    p {
+      opacity: 0.5;
+    }
     z-index: 100;
   }
   .appConatiner_drawer_expand {
     position: absolute;
     left: -1.6rem;
-    top: 7rem;
+    top: 3rem;
     opacity: 1;
     z-index: 100;
   }
   .faults_collapse {
-    top: 11rem;
+    top: 7.5rem;
   }
   .faults_expanded {
-    top: 10rem;
+    top: 6rem;
   }
   .i2cControl {
     cursor: pointer;
@@ -487,11 +489,12 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 12px;
-      color: #1c99c4;
 
       p {
+        color: #323232;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
+        opacity: 0.5;
       }
     }
   }
@@ -500,10 +503,14 @@
   //   right: 0;
   //   top: 11rem;
   // }
+  .enabledTheDrawerLabel {
+    color: #1c99c4 !important;
+    opacity: 1 !important;
+  }
   .faultsControl {
     cursor: pointer;
     width: 36px;
-    height: 66px;
+    height: 85px;
 
     background: #ffffff;
     border-radius: 8px 0px 0px 8px;
@@ -522,11 +529,12 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 12px;
-      color: #1c99c4;
 
       p {
+        color: #323232;
         writing-mode: vertical-lr;
         transform: rotate(180deg);
+        opacity: 0.5;
       }
     }
   }

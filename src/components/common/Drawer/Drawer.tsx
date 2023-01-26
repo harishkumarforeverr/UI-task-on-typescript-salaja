@@ -236,6 +236,11 @@ const DrawerSide = (props: any) => {
              
             /> */}
             <div
+              style={
+                {
+                  // opacity: open && drawerType == "i2c" ? 1 : 0.5,
+                }
+              }
               className={
                 open ? "appConatiner_drawer_expand" : "appConatiner_drawer"
               }
@@ -257,7 +262,15 @@ const DrawerSide = (props: any) => {
                   <LeftOutlined className="rightIcon" />
                 )}
                 <span className="i2cLabel">
-                  <p>C2I</p>
+                  <p
+                    className={
+                      open && drawerType === "i2c"
+                        ? "enabledTheDrawerLabel"
+                        : ""
+                    }
+                  >
+                    C2I
+                  </p>
                 </span>
               </div>
             </div>
@@ -269,6 +282,11 @@ const DrawerSide = (props: any) => {
               }
             >
               <div
+                style={
+                  {
+                    // opacity: open && drawerType == "faults" ? 1 : 0.5,
+                  }
+                }
                 onClick={() => {
                   // setOpen(true);
                   if (drawerType == "faults" && open) {
@@ -286,7 +304,15 @@ const DrawerSide = (props: any) => {
                   <LeftOutlined className="rightIcon" />
                 )}
                 <span className="faultsLabel">
-                  <p>Faults</p>
+                  <p
+                    className={
+                      open && drawerType === "faults"
+                        ? "enabledTheDrawerLabel"
+                        : ""
+                    }
+                  >
+                    Faults
+                  </p>
                   {drawerType == "faults" && open ? (
                     <div className="smallCircle redColor  expandedGreen"></div>
                   ) : (
