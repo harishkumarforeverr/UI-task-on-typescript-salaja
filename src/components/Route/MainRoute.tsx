@@ -30,23 +30,15 @@ const MainRoute = () => {
             />
           }
         />
+        <Route path="/setting" element={<PrivateRoute component={Setting} />} />
+        <Route
+          path="/quick_tuning"
+          element={<PrivateRoute component={QuickTuning} />}
+        />
+        <Route path="/mpet" element={<PrivateRoute component={MPET} />} />
       </Routes>
     </Box>
   );
 };
 
 export default MainRoute;
-{
-  /* <Box>
-      <Header />
-      <Nav />
-     <div className="containersOfmainRouter">
-     <Routes>
-        <Route path="/" element={<DashboardConatiner />} />
-        <Route path="/setting" element={<Setting />} />
-        <Route path="/quick_tuning" element={<QuickTuning />} />
-        <Route path="/mpet" element={<MPET />} />
-      </Routes>
-     </div>
-    </Box> */
-}
