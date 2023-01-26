@@ -1,0 +1,51 @@
+.sidenav_listitem {
+  width: 100px !important;
+  height: 77px !important;
+  cursor: pointer;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: center !important;
+}
+.sidenav_listitem_mpet {
+  margin-top: 3.5rem !important;
+}
+.list_box {
+  padding: 1rem;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  border-radius: 36px;
+}
+.menulist_typography {
+  font-family: -helvetica;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+  margin-top: 5px;
+  color: gray;
+}
+.menulist_typography_quickTuning {
+  font-family: -helvetica;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+  margin-top: 5px;
+  color: gray;
+  position: absolute !important;
+  top: 87% !important;
+}
+.MuiDrawer-paper {
+  background-color: #f2f8fb !important;
+  border-right-width: 0 !important;
+  width: 120px;
+  align-items: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.selected-Tab-bgColor {
+  background-color: #118899;
+}
+.selected-text-color {
+  color: black !important;
+}

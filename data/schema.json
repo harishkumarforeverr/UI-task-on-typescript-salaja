@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "title": "Register Values",
+  "properties": {
+    "device_name": {
+      "type": "string",
+      "description": "Name of the device example MCT8315"
+    },
+    "register_type": {
+      "type": "string",
+      "description": "Whether this object holds RAM or EEPROM register values"
+    },
+    "registers": {
+      "type": "array",
+      "description": "List of registers and its bit field details",
+      "items": {
+        "register_addrress": {
+          "type": "string",
+          "description": "List of register and it details"
+        },
+        "ip_name": {
+          "type": "string",
+          "description": "This field is the name of the IP, module, address block, or group of registers as applicable. In the DocZone XML output, the IP results in a section with a group of register subsections."
+        },
+        "register_acronym": {
+          "type": "string",
+          "description": "This field is the shortened register name (for example: DEV_ID with full name [register short description] Device ID)"
+        },
+        "bit_field": {
+          "type": "array",
+          "description": "List of bit fields and its details",
+          "items": {
+            "type": "object",
+            "field_name": {
+              "type": "string",
+              "description": " Name of each individual bit or group of bits"
+            },
+            "field_number": {
+              "type": "string",
+              "description": "Bit number for individual register bits or groups of register bits."
+            },
+            "access_type": {
+              "type": "string",
+              "description": "This field is for the access type for each bit field."
+            },
+            "reset_value": {
+              "type": "string",
+              "description": "Value of the bit on reset.  Could be the default value of the bit, depending on your use case."
+            },
+            "description": {
+              "type": "string",
+              "description": "Use this field to describe the function or purpose of each bit."
+            },
+            "reserved": {
+              "type": "string",
+              "description": "Setting this field to Y changes the name and description of the bit field to RESERVED only in the output files."
+            },
+            "enumerations": {
+              "type": "array",
+              "description": "List of values thatcan be applied to the register bit position ",
+              "items": {
+                "type": "object",
+                "value": {
+                  "type": "string",
+                  "description": "Individual values the bit can have, along with the meaning of the value."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "meaning of the bit value"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

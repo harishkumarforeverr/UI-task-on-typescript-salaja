@@ -1,46 +1,75 @@
+import { BrowserWindow } from 'electron';
+import * as path from 'path';
+import * as log from 'electron-log';
+import * as glob from 'glob';
+const isDev = require('electron-is-dev');
 
-import  { app, BrowserWindow, ipcMain } from "electron";
-import * as path from "path";
-const log  = require('electron-log');
 const logger = log.scope("Main");
 
-logger.info("App starting...");
-const createWindow = () => {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+
+export default class Main {
+    static mainWindow: Electron.BrowserWindow;
+    static application: Electron.App;
+    static BrowserWindow: any;
+    private static onWindowAllClosed() {
+        if (process.platform !== 'darwin') {
+            Main.application.quit();
+        }
     }
-  })
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+    private static initialize() {
+        logger.info("Initializing the applicationbefore app bring up");
+        /** Implements the board connectivity call before bring up the application */
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+    }
+
+    /** This function import all the IPC sender from the backend */
+    private static loadBackend(){
+        logger.debug("Importing all the IPC sender from backend ");
+        const files = glob.sync(path.join(__dirname, 'backend/**/*.js'));
+        files.forEach((file) => {
+            require(file);
+        });
+    }
+
+    /** Allow only one instance of the the app is running */
+    private static requestSingleInstanceLock(){
+        if(process.mas) return false;
+        const gotTheLock =  Main.application.requestSingleInstanceLock();            
+        if (!gotTheLock) {
+            Main.application.quit()
+        }
+    }
+
+    private static onClose() {
+        // Dereference the window object. 
+        Main.mainWindow = null;
+    }
+
+    private static onReady() {
+        logger.info("App starting...");
+        Main.mainWindow = new Main.BrowserWindow({
+            width: 800, 
+            height: 600, 
+            webPreferences: {
+                preload: path.join(__dirname, 'preload.js')
+            }
+        });
+        Main.mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
+        // Main.mainWindow
+        //     .loadURL('file://' + __dirname + '/index.html');
+        Main.mainWindow.on('closed', Main.onClose);
+        // Main.mainWindow.maximize();
+
+    }
+
+    static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
+        Main.BrowserWindow = browserWindow;
+        Main.application = app;
+        Main.requestSingleInstanceLock();
+        Main.initialize(); 
+        Main.loadBackend();
+        Main.application.on('window-all-closed', Main.onWindowAllClosed);
+        Main.application.on('ready', Main.onReady);
+    }
 }
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
-  createWindow()
-
-  app.on('activate', () => {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
-})
-
-// Quit when all windows are closed, except on macOS. There, it's common
-// for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
-})
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.

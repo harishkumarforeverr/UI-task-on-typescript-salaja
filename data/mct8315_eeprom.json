@@ -1,0 +1,80 @@
+{
+    "device_name": "MCT8315",
+    "register_type": "EEPROM",
+    "registers": [
+      {
+        "register_address": "0x00000080",
+        "ip_name": "Algorithm Configuration",
+        "register_acronym": "ISD_CONFIG",
+        "bit_field": [
+          {
+            "position": "31",
+            "name": "PARITY",
+            "access_type": "R/W",
+            "reset": "0",
+            "description": "Parity bit",
+            "reserved": false
+          },
+          {
+            "position": "30",
+            "name": "ISD_EN",
+            "access_type": "R/W",
+            "reset": "0",
+            "description": "ISD enable",
+            "reserved": false,
+            "settings": [
+              {
+                "value": "1",
+                "description": "Enable"
+              },
+              {
+                "value": "0",
+                "description": "Disable"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "register_address": "0x00000082",
+        "ip_name": "Algorithm Configuration",
+        "register_acronym": "MOTOR_STARTUP1",
+        "bit_field": [
+          {
+            "position": "31",
+            "name": "PARITY",
+            "access_type": "R/W",
+            "reset": "0",
+            "description": "Parity bit",
+            "reserved": false
+          },
+          {
+            "position": "30:29",
+            "name": "MTR_STARTUP",
+            "access_type": "R/W",
+            "reset": "00",
+            "description": "Motor start-up method",
+            "reserved": false,
+            "settings": [
+              {
+                "value": "00",
+                "description": "Align"
+              },
+              {
+                "value": "01",
+                "description": "Double Align"
+              },
+              {
+                "value": "10",
+                "description": "IPD"
+              },
+              {
+                "value": "11",
+                "description": "Slow first cycle"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,41 @@
+.appConatiner_DashboardConatiner {
+  .appConatiner_drawer {
+    position: fixed;
+    right: 0;
+    top: 2rem;
+  }
+  .i2cControl,
+  .i2cControlFalse {
+    cursor: pointer;
+    width: 36px;
+    height: 54px;
+
+    background: #ffffff;
+    border-radius: 8px 0px 0px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.4rem;
+    .rightIcon {
+      font-size: 0.81rem;
+    }
+    .i2cLabel {
+      width: 19px;
+      height: 12px;
+      font-family: "Helvetica";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 12px;
+      color: #1c99c4;
+
+      p {
+        writing-mode: vertical-lr;
+      }
+    }
+  }
+  .i2cControlFalse {
+    width: 36px;
+    height: 86px;
+  }
+}

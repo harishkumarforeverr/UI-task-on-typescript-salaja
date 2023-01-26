@@ -2,6 +2,8 @@
 The BLDC tool/app provide a reactjs based frontend application on top of electron framework. This application works as standalone application.
 
 ## Available Scripts
+Install npm modules with :
+### `npm install --legacy-peer-deps`
 
 In the project directory, you can run:
 
@@ -17,5 +19,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Run the app in standalone mode
 
 ### `npm run start:desktop`
+
+start application in devlopment mode
+
+### `npm run electron-dev`
 
 

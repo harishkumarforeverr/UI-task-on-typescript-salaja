@@ -1,0 +1,68 @@
+.conatinerCard {
+  margin: 1%;
+  min-width: 286px;
+  min-height: 271px;
+  height: 100%;
+  background: #f2f8fb;
+  box-shadow: 0px 6px 12px -2px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  .ant-card-body {
+    position: relative;
+    // display: grid;
+    width: 286px;
+    height: 326px;
+    // height: 100%;
+  }
+  .GuiSupport {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #3d3d3d;
+    margin-left: 20px;
+  }
+  .deatiles {
+    margin-top: 2.3rem;
+  }
+  .btn {
+    position: absolute;
+    bottom: 7px;
+    align-self: end;
+    left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    gap: 8px;
+    width: 114px;
+    height: 44px;
+
+    background: #cc0000;
+    border-radius: 2px;
+    color: white;
+  }
+  .ColorContainer {
+    width: 18px;
+    height: 18px;
+    left: 151px;
+    top: 197px;
+    border-radius: 50%;
+    display: inline-block;
+    // background: #cc0000;
+  }
+  .numberText {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 10px;
+    /* identical to box height, or 133% */
+
+    /* Text color */
+
+    color: #231f20;
+  }
+}
