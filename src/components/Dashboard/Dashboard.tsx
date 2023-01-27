@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Assests } from "./Assests";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Card } from "antd";
+import { usersLinks } from "./pdf/index.js";
 import SelectWrapper from "../common/SelectWrapper";
 function Dashboard({ setView }: { setView: any }) {
   // const [age, setAge] = React.useState<string>("");
@@ -32,32 +33,32 @@ function Dashboard({ setView }: { setView: any }) {
     {
       title: "Users's Guide",
       icons: <UserOutlined />,
-      link: paths.UserGuidesPage,
+      link: usersLinks.link1,
     },
     {
       title: "Product Page",
       icons: <ExperimentOutlined />,
-      link: "/",
+      link: usersLinks.link2,
     },
     {
       title: "Data Sheet",
       icons: <ProjectOutlined />,
-      link: "/",
+      link: usersLinks.link3,
     },
     {
       title: "Tuning Page",
       icons: <SettingOutlined />,
-      link: "/",
+      link: usersLinks.link4,
     },
     {
       title: "Tools Page",
       icons: <PullRequestOutlined />,
-      link: "/",
+      link: usersLinks.link5,
     },
     {
       title: "E2E testing",
       icons: <TransactionOutlined />,
-      link: "/",
+      link: usersLinks.link6,
     },
   ];
   const handleChange = (event: SelectChangeEvent) => {
@@ -85,7 +86,8 @@ function Dashboard({ setView }: { setView: any }) {
                 bordered={false}
                 style={{ width: 300 }}
                 onClick={() => {
-                  navigate(obj.link);
+                  // navigate(obj.link);
+                  window.open(obj.link, "_blank");
                 }}
               >
                 <div className="rightConatinesIcons">{obj.icons}</div>
