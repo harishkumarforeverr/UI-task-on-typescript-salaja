@@ -17,6 +17,7 @@ import {
   // Select,
   SelectChangeEvent,
 } from "@mui/material";
+import { DrawerImages } from "./Images";
 
 interface propsType {
   open: boolean;
@@ -172,14 +173,16 @@ const DrawerSide = (props: any) => {
             return (
               <>
                 <div className="titleConatiner">
-                  <div className="bigCircle"></div>
+                  {/* <div className="bigCircle"></div> */}
+                  <img className="redBubbleCircle" src={DrawerImages.redBubble} />
                   <div className="bigCircle_title"> {obj.title}</div>
                 </div>
                 <div className="subTitleConatiner_parent">
                   {obj.subtitle.map((subObj) => {
                     return (
                       <div className="subTitleConatiner">
-                        <div className="bigCircle"></div>
+                        {/* <div className="bigCircle"></div> */}
+                        <img  className="redBubbleCircle"  src={DrawerImages.redBubble} />
                         <div className="bigCircle_title"> {subObj.title}</div>
                       </div>
                     );

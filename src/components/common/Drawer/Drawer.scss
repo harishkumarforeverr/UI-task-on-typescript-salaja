@@ -393,6 +393,12 @@
     .titleConatiner {
       display: flex;
     }
+    .redBubbleCircle{
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
     .subTitleConatiner_parent {
       margin-top: 1rem;
       margin-left: 3rem;
@@ -456,7 +462,7 @@
   }
   .appConatiner_drawer_expand {
     position: absolute;
-    left: -1.6rem;
+    left: -2.19rem;
     top: 3rem;
     opacity: 1;
     z-index: 100;

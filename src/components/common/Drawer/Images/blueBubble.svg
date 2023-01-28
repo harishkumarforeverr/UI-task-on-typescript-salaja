@@ -1,0 +1,36 @@
+<svg width="100%" height="100%" viewBox="0 0 80 80" preserveAspectRatio="xMidYMid meet" style="transform-origin: 50% 50%;" class="style-scope ti-custom-widget-led" id="ti_adv_tuning_custom_widget_ledled4caf50_on">
+          <defs id="defs4" class="style-scope ti-custom-widget-led">
+
+            <linearGradient id="linearGradient4150" class="style-scope ti-custom-widget-led">
+              <stop stop-opacity="1.0" offset="0" id="stop4221" class="style-scope ti-custom-widget-led" stop-color="#4caf50"></stop>
+              <stop stop-opacity="0" offset="1" id="stop4223" class="style-scope ti-custom-widget-led" stop-color="#4caf50"></stop>
+            </linearGradient>
+            <linearGradient id="linearGradient4225" class="style-scope ti-custom-widget-led">
+              <stop id="stop4152" offset="0" stop-opacity="1.0" class="style-scope ti-custom-widget-led" stop-color="#4caf50"></stop>
+              <stop id="stop4154" offset="1" stop-opacity="0.4" class="style-scope ti-custom-widget-led" stop-color="#4caf50"></stop>
+            </linearGradient>
+            <radialGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.80987454,0.0018893,-0.00188713,0.80894508,-15.108397,-207.29128)" r="49.902184" fy="300.01285" fx="63.834038" cy="300.01285" cx="63.834038" xlink:href="#linearGradient4150" class="style-scope ti-custom-widget-led" id="ti_adv_tuning_custom_widget_ledradialGradient41564caf50_on"></radialGradient>
+            <radialGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.78225292,-0.01086571,0.00887859,0.63919086,-11.626337,-150.7219)" r="49.902184" fy="300.0163" fx="62.35656" cy="300.0163" cx="62.35656" style$="" xlink:href="#linearGradient4150" class="style-scope ti-custom-widget-led" id="ti_adv_tuning_custom_widget_ledradialGradient41574caf50_on"></radialGradient>
+          </defs>
+          <g transform="translate(4.3915046,4.8449881)" style="display:inline" id="layer3" class="style-scope ti-custom-widget-led">
+            <path d="m 57.281661,35.520848 c 0,11.693806 -9.436019,21.19661 -21.129748,21.279304 -11.69373,0.08269 -21.263201,-9.285718 -21.428582,-20.978355 -0.165383,-11.692636 9.18499,-21.576404 20.826686,-21.575994 11.694023,4.1e-4 21.939035,9.13316 21.772824,21.219838" style="display:inline;fill:#333333;fill-opacity:1;stroke:#d0d0d0;stroke-width:10;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path4136" class="style-scope ti-custom-widget-led"></path>
+          </g>
+          <g style="display:inline" id="layer4" class="style-scope ti-custom-widget-led">
+            <path d="m 61.673165,40.365836 c 0,11.693806 -9.436019,21.19661 -21.129748,21.279304 -11.69373,0.08269 -21.263201,-9.285718 -21.428582,-20.978355 -0.165383,-11.692636 9.18499,-21.576404 20.826686,-21.575994 11.694023,4.1e-4 21.939035,9.13316 21.772824,21.219838" id="path4136-6" class="style-scope ti-custom-widget-led" style="display:inline;opacity:0.55;fill:#4caf50;fill-opacity:0.55;stroke:#4caf50;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.5"></path>
+          </g>
+
+
+
+          <g transform="translate(25.3915046,25.8449881)" id="layer2" class="style-scope ti-custom-widget-led" style="display:inline;">
+            <path id="path4140" transform="scale(0.4,0.4)" style="display:inline;fill-opacity:1;" d="m 76.355601,35.518697 c 0,22.185856 -17.902315,40.21487 -40.088026,40.371759 C 14.081864,76.047345 -4.0736375,58.273303 -4.3874056,36.089666 -4.7011736,13.906029 13.038647,-4.8457656 35.12564,-4.8449881 57.311908,-4.8442107 76.749061,12.482731 76.433728,35.413956" class="style-scope ti-custom-widget-led" fill="#4caf50"></path>
+          </g>
+
+
+
+          <g transform="translate(-28,-28)" id="layer5" class="style-scope ti-custom-widget-led" style="display:inline;">
+            <path id="path4141" transform="scale(1.7,1.7)" style="display:inline;fill-opacity:0.18;" d="m 60.588751,40.365959 c 0,11.097298 -8.954684,20.115356 -20.051908,20.193831 C 29.439617,60.63826 20.358289,51.747744 20.201344,40.651556 20.044398,29.555368 28.917803,20.175778 39.965649,20.176167 c 11.097504,3.88e-4 20.81991,8.667271 20.662181,20.1374" class="style-scope ti-custom-widget-led" fill="#4caf50"></path>
+          </g>
+
+
+
+        </svg>
