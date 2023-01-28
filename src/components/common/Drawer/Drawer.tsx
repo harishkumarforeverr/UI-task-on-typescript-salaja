@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, DrawerProps, Input, RadioChangeEvent } from "antd";
+import { Card, Checkbox, Modal, Input, RadioChangeEvent } from "antd";
 import { Button, Drawer, Switch, Collapse, Slider } from "antd";
 import "./Drawer.scss";
 import type { SliderMarks } from "antd/es/slider";
@@ -19,109 +19,134 @@ import {
 } from "@mui/material";
 import { DrawerImages } from "./Images";
 
-interface propsType {
-  open: boolean;
-  setOpen: (arg: boolean) => void;
-  setDrawerType: (arg: string) => void;
-  drawerType: string;
-}
-
+ 
 const { Panel } = Collapse;
 
 const marks: SliderMarks = {
   0: "0",
   25: "25",
   50: "50",
-  100: "100",
-  // 100: {
-  //   style: {
-  //     color: "#f50",
-  //   },
-  //   label: <strong>100°C</strong>,
-  // },
+  100: "100", 
 };
-const motorObj = [
+const initialmotorObj = [
   {
     title: "Algorithm State",
+    active: true,
     subtitle: "MOTOR IDLE",
   },
   {
     title: "% Reference for Speed Loop",
+    active: true,
     subtitle: "0.00",
   },
   {
     title: "% Voltage Magnitude",
+    active: true,
     subtitle: "0.00",
   },
   {
     title: "% VM Voltage",
+    active: true,
     subtitle: "0.00",
   },
   {
     title: "Motor Resistance",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Motor Inductance",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Motor BEMF Constant",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Estimated Rotor Angle",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "CSA Gain",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "id Ref Closed Loop",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "iq Ref Closed Loop",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Vd",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Vq",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "Bus Current",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "ISD State",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "IPD State",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "ISD Speed",
+    active: false,
     subtitle: "0.00",
   },
   {
     title: "IPD Angle",
+    active: false,
     subtitle: "0.00",
   },
 ];
+
+const ConfigureModel=()=>{
+  return (
+    <div className="ConfigureModel">
+      <div className="ConfigureModel_header">
+        <h1>FAULT CONFIGURATION</h1>
+      </div>
+    </div>
+
+  )
+}
 const DrawerSide = (props: any) => {
+  const [showConfigModel,setshowConfigModel]=useState(true)
+  const [motorObj,setmotorObj]=useState(initialmotorObj)
   const [open, setOpen] = useState(false);
   const [drawerType, setDrawerType] = useState("");
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
 
-  const ControllerFaults = () => {
+  const closeTheConfigModel=()=>{
+    setshowConfigModel(false)
+  }
+  const openConfigModal=()=>{
+    setshowConfigModel(true)
+  }
+  const GateDrive = () => {
     return (
       <div className="tabs">
         <h1>
@@ -130,7 +155,7 @@ const DrawerSide = (props: any) => {
       </div>
     );
   };
-  const GateDrive = () => {
+  const ControllerFaults = () => {
     return (
       <div className="tabs">
         <h1>
@@ -161,12 +186,12 @@ const DrawerSide = (props: any) => {
       subtitle: [],
     },
   ];
-  const ControlFaultsContainer = () => {
+  const GateDriveContainer = () => {
     return (
       <div className="ControlFaultsContainer">
         <div className="btnConatiner">
           <Button className="btn">Clear Faults</Button>
-          <Button className="btn">Configure</Button>
+          <Button className="btn" onClick={openConfigModal}>Configure</Button>
         </div>
         <div className="ControlFaultsContainer_container">
           {containerFaultsData.map((obj) => {
@@ -174,7 +199,10 @@ const DrawerSide = (props: any) => {
               <>
                 <div className="titleConatiner">
                   {/* <div className="bigCircle"></div> */}
-                  <img className="redBubbleCircle" src={DrawerImages.redBubble} />
+                  <img
+                    className="redBubbleCircle"
+                    src={DrawerImages.redBubble}
+                  />
                   <div className="bigCircle_title"> {obj.title}</div>
                 </div>
                 <div className="subTitleConatiner_parent">
@@ -182,7 +210,50 @@ const DrawerSide = (props: any) => {
                     return (
                       <div className="subTitleConatiner">
                         {/* <div className="bigCircle"></div> */}
-                        <img  className="redBubbleCircle"  src={DrawerImages.redBubble} />
+                        <img
+                          className="redBubbleCircle"
+                          src={DrawerImages.redBubble}
+                        />
+                        <div className="bigCircle_title"> {subObj.title}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+  const ControlFaultsContainer = () => {
+    return (
+      <div className="ControlFaultsContainer">
+        <div className="btnConatiner">
+          <Button className="btn">Clear Faults</Button>
+          <Button className="btn" onClick={openConfigModal}>Configure</Button>
+        </div>
+        <div className="ControlFaultsContainer_container">
+          {containerFaultsData.map((obj) => {
+            return (
+              <>
+                <div className="titleConatiner">
+                  {/* <div className="bigCircle"></div> */}
+                  <img
+                    className="redBubbleCircle"
+                    src={DrawerImages.redBubble}
+                  />
+                  <div className="bigCircle_title"> {obj.title}</div>
+                </div>
+                <div className="subTitleConatiner_parent">
+                  {obj.subtitle.map((subObj) => {
+                    return (
+                      <div className="subTitleConatiner">
+                        {/* <div className="bigCircle"></div> */}
+                        <img
+                          className="redBubbleCircle"
+                          src={DrawerImages.redBubble}
+                        />
                         <div className="bigCircle_title"> {subObj.title}</div>
                       </div>
                     );
@@ -198,15 +269,29 @@ const DrawerSide = (props: any) => {
   const items = [
     {
       key: "1",
+      label: <GateDrive />,
+      children: <GateDriveContainer />,
+    },
+    // ControllerFaults
+    {
+      key: "2",
       label: <ControllerFaults />,
       children: <ControlFaultsContainer />,
     },
-    {
-      key: "2",
-      label: <GateDrive />,
-      children: `Content of Tab Pane 2`,
-    },
   ];
+  const handeTheCheckBoxMotor = (index:number) => {
+    const newData = motorObj.map((obj, i) => {
+      if (i == index) {
+        return {
+          ...obj,
+          active: !obj.active,
+        };
+      } else {
+        return obj;
+      }
+    });
+    setmotorObj(newData)
+  };
   return (
     <div
       style={{
@@ -435,6 +520,37 @@ const DrawerSide = (props: any) => {
                           <Select
                             className="selectMotor"
                             placeholder="Algorithm Variable Status Select"
+                            dropdownRender={() => {
+                              const jsx = motorObj.map((obj, index) => {
+                                return (
+                                  <div
+                                    style={{
+                                      width: "100%",
+                                      margin: "10px 0",
+                                    }}
+                                  >
+                                    <Checkbox
+                                      onClick={() => {
+                                        handeTheCheckBoxMotor(index);
+                                      }}
+                                      checked={obj.active}
+                                    />{" "}
+                                    {obj.title}
+                                  </div>
+                                );
+                              });
+                              return (
+                                <div
+                                  style={{
+                                    height: "14rem",
+                                    overflow: "hidden",
+                                    overflowY: "scroll",
+                                  }}
+                                >
+                                  {jsx}
+                                </div>
+                              );
+                            }}
                             options={[
                               { value: "jack", label: "Jack" },
                               { value: "lucy", label: "Lucy" },
@@ -449,7 +565,7 @@ const DrawerSide = (props: any) => {
                         </div>
                         <div>
                           <div className="motorCardConatiner">
-                            {motorObj.map((moto) => {
+                            {motorObj.filter(({active})=>active).map((moto) => {
                               return (
                                 <div className="motorCards">
                                   <p> {moto.title}</p>
@@ -481,6 +597,17 @@ const DrawerSide = (props: any) => {
           )}
         </div>
       </div>
+      <Modal 
+
+      
+style={{ top: 20 }}
+          visible={showConfigModel}
+          onCancel={closeTheConfigModel}
+          className="configable_modal"
+          centered
+        >
+           <ConfigureModel />
+        </Modal>
     </div>
   );
 };
