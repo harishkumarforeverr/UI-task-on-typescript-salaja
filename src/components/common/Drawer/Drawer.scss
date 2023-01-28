@@ -1,12 +1,12 @@
 .drawerContainer {
   // position: relative;
-// .ant-tabs-nav-list{
-//   transform: translate(0px, 0px);
-//   /* background: green; */
-//   width: 100%;
-//   display: flex;
-//   justify-content: space-around;
-// }
+  // .ant-tabs-nav-list{
+  //   transform: translate(0px, 0px);
+  //   /* background: green; */
+  //   width: 100%;
+  //   display: flex;
+  //   justify-content: space-around;
+  // }
 
   .ant-collapse-content-box {
     background: #f2f8fb;
@@ -343,14 +343,15 @@
   margin-left: auto;
   height: 100vh;
   padding-top: 0;
-  padding-left: 8px;.ant-tabs-nav-list{
+  padding-left: 8px;
+  .ant-tabs-nav-list {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
   }
-  .ant-tabs-nav-wrap{
+  .ant-tabs-nav-wrap {
     display: grid !important;
   }
-  .ant-tabs-tab{
+  .ant-tabs-tab {
     margin: 0 !important;
     padding-left: 10px !important;
   }
@@ -410,7 +411,7 @@
     .titleConatiner {
       display: flex;
     }
-    .redBubbleCircle{
+    .redBubbleCircle {
       width: 1.5rem;
       height: 1.5rem;
       margin-right: 10px;
@@ -580,38 +581,144 @@
   margin-top: 7px;
 }
 
-.configable_modal{
-  width: 80%!important; 
+.configable_modal {
+  width: 80% !important;
+  // max-height: 526px !important;
+  max-width: 1316px !important;
+  // margin-bottom: 3rem;
   .ant-modal-content {
-margin: 0 !important;
-padding: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     min-height: 30rem;
     // border-radius: 30px;
   }
   .ant-modal-body {
-    // padding-left: 0%;
+    // padding-left: 3%;
     // padding-right: 0%;
+  }
+  .ant-modal-footer {
+    display: none;
+  }
+  .ant-modal-close-x {
+    display: none;
+  }
 }
-.ant-modal-footer {
-  display: none;
-}
-.ant-modal-close-x {
-  display: none;
-}
-}
-.ConfigureModel{
-  &_header{color: #fff !important;
-    background-color: #cc0000 !important;    height: 60px;
+.ConfigureModel {
+  padding-bottom: 2rem;
+  &_header {
+    color: #fff !important;
+    background-color: #cc0000 !important;
+    height: 60px;
     display: grid;
     align-items: center;
-    padding-left: 20px;
-    h1{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    h1 {
       color: #fff;
       text-shadow: 1px 1px #0000007a;
       overflow: hidden;
-      white-space: nowrap;font-size: 18px !important;
+      white-space: nowrap;
+      font-size: 18px !important;
       font-weight: bold;
       text-overflow: ellipsis;
+    }
+    .closeIcon {
+      font-size: 25px;
+    }
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: Roboto, sans-serif;
+    background-color: transparent;
+    color: #63666a;
+    font-weight: 400;
+  }
+  .configContainer {
+    padding-left: 2%;
+    padding: 3%;
+    height: 30rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px #cccccc;
+      border-radius: 100rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #cccccc;
+      border-radius: 190px;
+      border-right: none;
+      border-left: none;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #cccccc;
+    }
+    &::-webkit-scrollbar-button {
+      width: 10px; 
+    }
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 3%;
+    .switchConatin {
+      margin-bottom: 2rem;
+      margin-top: 14px;
+      .ant-switch-inner {
+        transition: background-color linear 0.08s;
+        background-color: #98999b;
+      }
+      .switch_value {
+        margin-top: 2px;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        p {
+          max-width: 15rem;
+        }
+      }
+    }
+    .configSelect {
+      max-width: 18.5rem;
+      margin-top: 1rem;
+      .ant-select-selector {
+        border: 1px solid #ccc;
+        border-radius: 0;
+      }
+      .ant-select-selection-item {
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-family: Roboto, sans-serif;
+        background-color: transparent;
+        color: #63666a !important;
+        opacity: 0.7;
+      }
+      .antSelectselector {
+        background-color: #fff;
+        background-image: none;
+        line-height: 1.42857143;
+        text-align: left;
+        text-decoration: none;
+        font-weight: normal;
+        font-style: normal;
+        border-radius: 0px;
+        border: 1px solid #ccc;
+        border-radius: 0;
+        font-family: Roboto, sans-serif;
+        color: #63666a !important;
+        cursor: pointer;
+        font-size: 12px !important;
+        width: 100%;
+        // padding: 4px 8px !important;
+        // width: 100% !important;
+      }
     }
   }
 }

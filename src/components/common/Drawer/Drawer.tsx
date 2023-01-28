@@ -1,32 +1,24 @@
 import React, { useState } from "react";
-import { Card, Checkbox, Modal, Input, RadioChangeEvent } from "antd";
-import { Button, Drawer, Switch, Collapse, Slider } from "antd";
+import { Card, Checkbox, Modal, Input } from "antd";
+import { Button, Switch, Collapse, Slider } from "antd";
 import "./Drawer.scss";
 import type { SliderMarks } from "antd/es/slider";
 import {
   LeftOutlined,
-  RightOutlined,
-  UpOutlined,
-  DownOutlined,
+  RightOutlined, 
+  CloseOutlined,
 } from "@ant-design/icons";
 import { Select, Tabs } from "antd";
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  // Select,
-  SelectChangeEvent,
-} from "@mui/material";
+ 
 import { DrawerImages } from "./Images";
 
- 
 const { Panel } = Collapse;
 
 const marks: SliderMarks = {
   0: "0",
   25: "25",
   50: "50",
-  100: "100", 
+  100: "100",
 };
 const initialmotorObj = [
   {
@@ -120,32 +112,409 @@ const initialmotorObj = [
     subtitle: "0.00",
   },
 ];
-
-const ConfigureModel=()=>{
+const configObj2 = [
+  {
+    type: "select",
+    title: "Overcurrent Level Setting [OCP_LVL]",
+    disabled: false,
+    option: [
+      {
+        value: "Overcurrent Level Setting [OCP_LVL]",
+        label: "Overcurrent Level Setting [OCP_LVL]",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Hardware Lock detection current limit (A) [HW_LOCK_ILIMIT]",
+    disabled: false,
+    option: [
+      {
+        value: "0.125 A",
+        label: "0.125 A",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Lock detection current threshold (A) [LOCK_ILIMIT]",
+    disabled: false,
+    option: [
+      {
+        value: "0.125 A",
+        label: "0.125 A",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Lock detection retry time [LCK_RETRY]",
+    disabled: false,
+    option: [
+      {
+        value: "100 ms",
+        label: "100 ms",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Abnormal Speed Lock Threshold [LOCK_ABN_SPEED]",
+    disabled: true,
+    option: [
+      {
+        value: "130%",
+        label: "130%",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title:
+      "Abnormal BEMF Lock Threshold (% of expected BEMF) [ABNORMAL_BEMF_THR]",
+    disabled: true,
+    option: [
+      {
+        value: "10%",
+        label: "10%",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "No Motor Lock Threshold (A) [NO_MTR_THR]",
+    disabled: true,
+    option: [
+      {
+        value: "0.05 A",
+        label: "0.05 A",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    title: "Undervoltage fault recovery mode [MIN_VM_MODE]",
+    subTitle: "Latch on Undervoltage",
+    disabled: false,
+  },
+];
+const configObj3 = [
+  {
+    type: "select",
+    title: "OCP Fault Options [OCP_MODE]",
+    disabled: false,
+    option: [
+      {
+        value: "Overcurrent causes a latched fault",
+        label: "Overcurrent causes a latched fault",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Hardware Lock detection current limit mode [HW_LOCK_ILIMIT_MODE]",
+    disabled: false,
+    option: [
+      {
+        value:
+          "Hardware Lock detection current limit causes latched fault; nfault active; Gate driver is tristated",
+        label:
+          "Hardware Lock detection current limit causes latched fault; nfault active; Gate driver is tristated",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Lock detection current limit mode [LOCK_ILIMIT_MODE]",
+    disabled: false,
+    option: [
+      {
+        value:
+          "Ilimit lock detection causes latched fault; nfault active; Gate driver is tristated",
+        label:
+          "Ilimit lock detection causes latched fault; nfault active; Gate driver is tristated",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "text",
+    title: "Calculated Abnormal Speed Lock Threshold (Hz)",
+    subTitle: "0.000",
+    disabled: false,
+  },
+  {
+    type: "text",
+    title: "Calculated Abnormal BEMF Lock Threshold (V)",
+    subTitle: "TODO",
+    disabled: false,
+  },
+  
+  {
+    type: "select",
+    title: "Motor Lock Mode [MTR_LCK_MODE]",
+    disabled: false,
+    option: [
+      {
+        value:
+          "Motor lock detection causes latched fault; nfault active; Gate driver is tristated",
+        label:
+          "Motor lock detection causes latched fault; nfault active; Gate driver is tristated",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    title: "IPD Timeout Fault [IPD_TIMEOUT_FAULT_EN]",
+    subTitle: "Disabled",
+    disabled: false,
+  },
+  {
+    type: "radio",
+    title: "Overvoltage fault recovery mode [MAX_VM_MODE]",
+    subTitle: "Latch on Overvoltage",
+    disabled: false,
+  },
+];
+const configObj1 = [
+  {
+    type: "radio",
+    title: "Over Temperature Warning [OTW_REP]",
+    subTitle: "Over temperature reporting on nFAULT is disabled",
+    disabled: false,
+  },
+  {
+    type: "select",
+    title: "OCP retry time [TRETRY]",
+    disabled: false,
+    option: [
+      {
+        value: "OCP retry time is 5 ms",
+        label: "OCP retry time is 5 ms",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title:
+      "Hardware Lock Detection current limit deglitch time [HW_LOCK_ILIMIT_DEG]",
+    disabled: false,
+    option: [
+      {
+        value: "No Deglitch",
+        label: "No Deglitch",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "select",
+    title: "Lock Detection current limit deglitch time [LOCK_ILIMIT_DEG]",
+    disabled: false,
+    option: [
+      {
+        value: "0.05 ms",
+        label: "0.05 ms",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+  {
+    type: "radio",
+    title: "Lock 1: Abnormal Speed [LOCK1_EN]",
+    subTitle: "Disabled",
+    disabled: false,
+  },
+  {
+    type: "radio",
+    title: "Lock 1: Abnormal Speed [LOCK2_EN]",
+    subTitle: "Disabled",
+    disabled: false,
+  },
+  {
+    type: "radio",
+    title: "Lock 1: No Motor[LOCK3_EN]",
+    subTitle: "Disabled",
+    disabled: false,
+  },
+  {
+    type: "radio",
+    title: "IPD Frequency Fault [IPD_FREQ_FAULT_EN]",
+    subTitle: "Disabled",
+    disabled: false,
+  },
+  {
+    type: "select",
+    title: "Automatic retry attempts [AUTO_RETRY_TIMES]",
+    disabled: false,
+    option: [
+      {
+        value: "NO Limit",
+        label: "NO Limit",
+      },
+      {
+        value: "something",
+        label: "something",
+      },
+    ],
+  },
+];
+const ConfigSwitch = ({ obj }: { obj: any }) => {
+  return (
+    <div className="switchConatin">
+      <p> {obj.title}</p>
+      <div className="switch_value">
+        <Switch />
+        <p> {obj.subTitle}</p>
+      </div>
+    </div>
+  );
+};
+const ConfigSelect = ({ obj }: { obj: any }) => {
+  return (
+    <div className="configSelect">
+      <p>{obj.title}</p>
+      <Select
+        disabled={obj.disabled}
+        defaultValue={obj?.option[0].value}
+        className="antSelectselector"
+        options={obj.option?.map(
+          ({ value, label }: { value: any; label: any }) => {
+            return {
+              value: "OCP retry time is 5 ms",
+              label: "OCP retry time is 5 ms",
+            };
+          }
+        )}
+      />
+    </div>
+  );
+};
+const ConfigText = ({ obj }: { obj: any }) => { 
+  return (
+    <div className="configSelect">
+      <p>{obj.title}</p>
+      <p>{obj.subTitle}</p>
+      
+    </div>
+  );
+};
+const ConfigureModel = () => {
   return (
     <div className="ConfigureModel">
       <div className="ConfigureModel_header">
         <h1>FAULT CONFIGURATION</h1>
+        <h1>
+          <CloseOutlined className="closeIcon" />
+        </h1>
+      </div>
+      <div className="configContainer">
+        <div>
+          {configObj1.map((obj) => {
+            if (obj.type == "radio") {
+              return <ConfigSwitch obj={obj} />;
+            }
+            if (obj.type == "select" && obj.option) {
+              return <ConfigSelect obj={obj} />;
+            }
+          })}
+        </div>
+        <div>
+          {configObj2.map((obj) => {
+            if (obj.type == "radio") {
+              return <ConfigSwitch obj={obj} />;
+            }
+            if (obj.type == "select" && obj.option) {
+              return <ConfigSelect obj={obj} />;
+            }
+          })}
+        </div>
+        <div>
+          {configObj3.map((obj) => {
+            if (obj.type == "radio") {
+              return <ConfigSwitch obj={obj} />;
+            }
+            if (obj.type == "select" && obj.option) {
+              return <ConfigSelect obj={obj} />;
+            } 
+            if (obj.type == "text") {
+             
+              return <ConfigText obj={obj} />;
+            }
+          })}
+        </div>
       </div>
     </div>
-
-  )
-}
+  );
+};
 const DrawerSide = (props: any) => {
-  const [showConfigModel,setshowConfigModel]=useState(true)
-  const [motorObj,setmotorObj]=useState(initialmotorObj)
+  const [showConfigModel, setshowConfigModel] = useState(false);
+  const [motorObj, setmotorObj] = useState(initialmotorObj);
   const [open, setOpen] = useState(false);
   const [drawerType, setDrawerType] = useState("");
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
 
-  const closeTheConfigModel=()=>{
-    setshowConfigModel(false)
-  }
-  const openConfigModal=()=>{
-    setshowConfigModel(true)
-  }
+  const closeTheConfigModel = () => {
+    setshowConfigModel(false);
+  };
+  const openConfigModal = () => {
+    setshowConfigModel(true);
+  };
   const GateDrive = () => {
     return (
       <div className="tabs">
@@ -191,7 +560,9 @@ const DrawerSide = (props: any) => {
       <div className="ControlFaultsContainer">
         <div className="btnConatiner">
           <Button className="btn">Clear Faults</Button>
-          <Button className="btn" onClick={openConfigModal}>Configure</Button>
+          <Button className="btn" onClick={openConfigModal}>
+            Configure
+          </Button>
         </div>
         <div className="ControlFaultsContainer_container">
           {containerFaultsData.map((obj) => {
@@ -231,7 +602,9 @@ const DrawerSide = (props: any) => {
       <div className="ControlFaultsContainer">
         <div className="btnConatiner">
           <Button className="btn">Clear Faults</Button>
-          <Button className="btn" onClick={openConfigModal}>Configure</Button>
+          <Button className="btn" onClick={openConfigModal}>
+            Configure
+          </Button>
         </div>
         <div className="ControlFaultsContainer_container">
           {containerFaultsData.map((obj) => {
@@ -279,7 +652,7 @@ const DrawerSide = (props: any) => {
       children: <ControlFaultsContainer />,
     },
   ];
-  const handeTheCheckBoxMotor = (index:number) => {
+  const handeTheCheckBoxMotor = (index: number) => {
     const newData = motorObj.map((obj, i) => {
       if (i == index) {
         return {
@@ -290,7 +663,7 @@ const DrawerSide = (props: any) => {
         return obj;
       }
     });
-    setmotorObj(newData)
+    setmotorObj(newData);
   };
   return (
     <div
@@ -565,14 +938,16 @@ const DrawerSide = (props: any) => {
                         </div>
                         <div>
                           <div className="motorCardConatiner">
-                            {motorObj.filter(({active})=>active).map((moto) => {
-                              return (
-                                <div className="motorCards">
-                                  <p> {moto.title}</p>
-                                  <h1>{moto.subtitle}</h1>
-                                </div>
-                              );
-                            })}
+                            {motorObj
+                              .filter(({ active }) => active)
+                              .map((moto) => {
+                                return (
+                                  <div className="motorCards">
+                                    <p> {moto.title}</p>
+                                    <h1>{moto.subtitle}</h1>
+                                  </div>
+                                );
+                              })}
                           </div>
                         </div>
                       </div>{" "}
@@ -597,17 +972,15 @@ const DrawerSide = (props: any) => {
           )}
         </div>
       </div>
-      <Modal 
-
-      
-style={{ top: 20 }}
-          visible={showConfigModel}
-          onCancel={closeTheConfigModel}
-          className="configable_modal"
-          centered
-        >
-           <ConfigureModel />
-        </Modal>
+      <Modal
+        style={{ top: 40 }}
+        visible={showConfigModel}
+        onCancel={closeTheConfigModel}
+        className="configable_modal"
+        centered
+      >
+        <ConfigureModel />
+      </Modal>
     </div>
   );
 };
