@@ -20,7 +20,7 @@ const marks: SliderMarks = {
   50: "50",
   100: "100",
 };
-const initialmotorObj = [
+const motorStaticData=[
   {
     title: "Algorithm State",
     active: true,
@@ -41,6 +41,9 @@ const initialmotorObj = [
     active: true,
     subtitle: "0.00",
   },
+]
+const initialmotorObj = [
+
   {
     title: "Motor Resistance",
     active: false,
@@ -938,6 +941,16 @@ const DrawerSide = (props: any) => {
                         </div>
                         <div>
                           <div className="motorCardConatiner">
+                            {
+                              motorStaticData.map((moto) => {
+                                return (
+                                  <div className="motorCards">
+                                    <p> {moto.title}</p>
+                                    <h1>{moto.subtitle}</h1>
+                                  </div>
+                                );
+                              })
+                            }
                             {motorObj
                               .filter(({ active }) => active)
                               .map((moto) => {
