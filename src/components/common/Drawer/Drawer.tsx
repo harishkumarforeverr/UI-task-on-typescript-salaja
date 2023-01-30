@@ -508,6 +508,7 @@ const DrawerSide = (props: any) => {
   const [motorObj, setmotorObj] = useState(initialmotorObj);
   const [open, setOpen] = useState(false);
   const [drawerType, setDrawerType] = useState("");
+  const [checked,setchecked]=useState(true)
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
@@ -558,6 +559,44 @@ const DrawerSide = (props: any) => {
       subtitle: [],
     },
   ];
+  const containerControllerFaultsData = [
+    {
+    title: "Motor Lock [MTR_LCK]",
+    subtitle: [
+    {
+    title: "Abnormal Speed [ABN_SPEED]",
+    },
+    
+    {
+    title: "Abnormal BEMF [ABN_BEMF]",
+    },
+    {
+    title: "No Motor [NO_MTR]",
+    },
+    ],
+    },
+    {
+    title: "Lock Current Limit [LOCK_ILIMIT]",
+    subtitle: [],
+    },
+    {
+    title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
+    subtitle: [],
+    },
+    {
+      title: "Motor Undervoltage [MTR_OVER_VOLTAGE]",
+      subtitle: [],
+      },
+      {
+        title: "Motor Overvoltage [MTR_UNDER_VOLTAGE]",
+        subtitle: [],
+        },
+        {
+          title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
+          subtitle: [],
+          },
+    ];
+    
   const GateDriveContainer = () => {
     return (
       <div className="ControlFaultsContainer">
@@ -610,7 +649,7 @@ const DrawerSide = (props: any) => {
           </Button>
         </div>
         <div className="ControlFaultsContainer_container">
-          {containerFaultsData.map((obj) => {
+          {containerControllerFaultsData.map((obj) => {
             return (
               <>
                 <div className="titleConatiner">
@@ -733,7 +772,7 @@ const DrawerSide = (props: any) => {
                         : ""
                     }
                   >
-                    C2I
+                    I2C
                   </p>
                 </span>
               </div>
@@ -855,8 +894,14 @@ const DrawerSide = (props: any) => {
                                   <p>Speed Control via I2C</p>
                                   <div>
                                     {" "}
-                                    <Switch size="small" defaultChecked />{" "}
-                                    <span className="Enabled">Enabled </span>
+                                    <Switch
+                                    
+                                    onChange={(e)=>{
+                                      // console.log(e)
+                                      setchecked(e)
+                                    }}
+                                    size="small" defaultChecked />{" "}
+                                    <span className="Enabled">{checked?"Enabled":"Disabled"} </span>
                                   </div>
                                 </div>
                                 <div className="drawerContainer_address">
@@ -877,6 +922,7 @@ const DrawerSide = (props: any) => {
                                   <p>I2C Speed Command Percentage</p>
                                   <div>
                                     <Slider
+                                    disabled={!checked}
                                       marks={marks}
                                       step={null}
                                       defaultValue={37}

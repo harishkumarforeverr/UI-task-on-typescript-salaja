@@ -1,15 +1,13 @@
 .drawerContainer {
-  // position: relative;
-  // .ant-tabs-nav-list{
-  //   transform: translate(0px, 0px);
-  //   /* background: green; */
-  //   width: 100%;
-  //   display: flex;
-  //   justify-content: space-around;
-  // }
-  // .ant-collapse-arrow svg{
-  //   font-size: 33px;
-  // }
+  
+  .ant-collapse-arrow {
+    font-size: 13px;
+    transform: rotate(180deg)
+  }
+  .ant-collapse-arrow svg{
+    font-size: 13px;
+    transform: rotate(270deg)
+  }
   .ant-collapse-content-box {
     background: #f2f8fb;
   }
@@ -45,7 +43,8 @@
   }
   .drawerContainer_label {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap:1rem;
     align-items: center;
     p {
       opacity: 0.9;
@@ -55,9 +54,9 @@
       // left: 1036px;
       // top: 98px;
 
-      font-family: Roboto;
+      font-family:Helvetica;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 12px;
       line-height: 18px;
       /* identical to box height, or 150% */
@@ -65,9 +64,9 @@
       color: #323232; 
     }
     .Enabled {
-      font-family: Roboto;
+      font-family: Helvetica;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 12px;
       line-height: 18px;
       /* identical to box height, or 150% */
@@ -89,7 +88,7 @@
       margin: 0;
       margin-bottom: 10px;
 
-      font-family: Roboto;
+      font-family: Helvetica;
       font-style: normal;
       font-weight: 500;
       font-size: 12px;
@@ -122,9 +121,9 @@
       // left: 1249px;
       // top: 154px;
 
-      font-family: Roboto;
+      font-family: Helvetica;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 12px;
       line-height: 18px;
       /* identical to box height, or 150% */
@@ -162,7 +161,7 @@
       // top: 206px;
       margin: 0;
 
-      font-family: Roboto;
+      font-family: Helvetica;
       font-style: normal;
       font-weight: 500;
       font-size: 12px;
@@ -173,79 +172,15 @@
     }
   }
 }
-// .Drawer_appConatiner_DashboardConatiner {
-//   .appConatiner_drawer {
-//     margin-bottom: 1.5rem;
-//   }
-//   .i2cControl {
-//     cursor: pointer;
-//     width: 36px;
-//     height: 54px;
 
-//     background: #ffffff;
-//     border-radius: 8px 0px 0px 8px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0.5rem;
-//     padding-top: 0.4rem;
-//     .rightIcon {
-//       font-size: 0.81rem;
-//     }
-//     .i2cLabel {
-//       width: 19px;
-//       height: 12px;
-//       font-family: "Helvetica";
-//       font-style: normal;
-//       font-weight: 700;
-//       font-size: 12px;
-//       line-height: 12px;
-//       p {
-//         color: #323232;
-//         writing-mode: vertical-lr;
-//         transform: rotate(180deg);
-//       }
-//     }
-//   }
-
-//   // .appConatiner_faultsdrawer {
-//   // }
-//   .faultsControl {
-//     cursor: pointer;
-//     width: 36px;
-//     height: 66px;
-
-//     background: #ffffff;
-//     border-radius: 8px 0px 0px 8px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0.5rem;
-//     padding-top: 0.4rem;
-//     .rightIcon {
-//       font-size: 0.81rem;
-//     }
-//     .faultsLabel {
-//       width: 19px;
-//       height: 12px;
-//       font-family: "Helvetica";
-//       font-style: normal;
-//       font-weight: 700;
-//       font-size: 12px;
-//       line-height: 12px;
-//       // color: #1c99c4;
-//       p {
-//         color: #323232;
-//         writing-mode: vertical-lr;
-//         transform: rotate(180deg);
-//       }
-//     }
-//   }
-// }
 .motorStatusConatiner {
   background: #f2f8fb;
   border: 1px solid #f2f8fb;
   box-shadow: 0px 6px 12px -2px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   margin-top: 5px;
+  min-height: 23rem;
+  height: 100%;
   padding: 4%;
   h1 {
     font-family: "Helvetica";
@@ -265,7 +200,7 @@
     /* identical to box height, or 100% */
 
     /* Text color */
-    font-family: Roboto;
+    font-family: Helvetica;
 
     color: #231f20;
   }
@@ -367,9 +302,9 @@
   }
   .tabs {
     h1 {
-      font-family: "Roboto";
+      font-family: "Helvetica";
       font-style: normal;
-      font-weight: 500;
+      font-weight: 700;
       font-size: 14px;
       line-height: 18px;
       /* identical to box height, or 129% */
@@ -438,7 +373,7 @@
     background: #cc0000;
   }
   .bigCircle_title {
-    font-family: Roboto;
+    font-family: Helvetica;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -513,8 +448,9 @@
       font-family: "Helvetica";
       font-style: normal;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 12px;
+    
 
       p {
         color: #323232;
@@ -553,7 +489,7 @@
       font-family: "Helvetica";
       font-style: normal;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 13px;
       line-height: 12px;
 
       p {
