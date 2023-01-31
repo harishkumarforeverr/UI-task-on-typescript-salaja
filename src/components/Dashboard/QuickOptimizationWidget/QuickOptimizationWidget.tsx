@@ -4,8 +4,6 @@ import nextIcon from "../Assests/nextIcon.png";
 import "./QuickOptimizationWidget.scss";
 import { Button, Card, Checkbox, Select } from "antd";
 import SelectWrapper from "../../common/SelectWrapper";
-// import { Assests } from "../../Assests";
-// Assests
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import { Assests } from "../Assests";
 import { CheckCircleOutlined } from "@ant-design/icons";
@@ -109,7 +107,10 @@ function QuickOptimizationWidget({ setView }: { setView: any }) {
                         <Checkbox onChange={onChange} />
                         <p>Hardware setup has been done manually</p>
                         {showCards ? (
-                          <Button onClick={handleTheSetup}>
+                          <Button
+                            className="Setup_completed_btn"
+                            onClick={handleTheSetup}
+                          >
                             Setup completed
                           </Button>
                         ) : (
@@ -123,7 +124,6 @@ function QuickOptimizationWidget({ setView }: { setView: any }) {
             </div>
           </div>
 
-          {/* {showCards && ( */}
           <div
             style={{
               opacity: setup ? 1 : 0.4,
@@ -133,7 +133,7 @@ function QuickOptimizationWidget({ setView }: { setView: any }) {
           >
             {cardsObj.map((obj) => {
               return (
-                <div className="cardsConatiner_card">
+                <div key={obj.title} className="cardsConatiner_card">
                   <div className="cards">
                     <div className="card_title">
                       <h1>
@@ -149,7 +149,11 @@ function QuickOptimizationWidget({ setView }: { setView: any }) {
                         <p>{obj.subDesc}</p>
                       </div>
                     </div>
-                    <img className="nextIcons" src={nextIcon} alt="ok" />
+                    <img
+                      className="nextIcons"
+                      src={!setup ? nextIcon : Assests.nextIcon_pro}
+                      alt="ok"
+                    />
                   </div>
                 </div>
               );

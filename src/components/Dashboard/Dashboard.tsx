@@ -29,35 +29,62 @@ function Dashboard({ setView }: { setView: any }) {
       setView("QuickOptimizationWidget");
     }
   };
+  const GetImages = (props: any) => {
+    return (
+      <div className="GetImages">
+        <img className="ellipse_image" src={Assests.Ellipse} />
+        <div className="GetImages_child">{props.children}</div>
+      </div>
+    );
+  };
   const userInfoObj = [
     {
       title: "Users's Guide",
-      icons: <UserOutlined />,
+      icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_1} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link1,
     },
     {
-      title: "Product Page",
-      icons: <ExperimentOutlined />,
+      title: "Product Page",  icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_2} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link2,
     },
     {
-      title: "Data Sheet",
-      icons: <ProjectOutlined />,
+      title: "Data Sheet",  icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_3} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link3,
     },
     {
-      title: "Tuning Page",
-      icons: <SettingOutlined />,
+      title: "Tuning Page",  icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_4} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link4,
     },
     {
-      title: "Tools Page",
-      icons: <PullRequestOutlined />,
+      title: "Tools Page",  icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_5} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link5,
     },
     {
-      title: "E2E testing",
-      icons: <TransactionOutlined />,
+      title: "E2E testing",  icons: (
+        <GetImages> 
+          <img className="image_inner" src={Assests.cardImage_6} alt="image_inner" />{" "}
+        </GetImages>
+      ),
       link: usersLinks.link6,
     },
   ];
@@ -82,6 +109,7 @@ function Dashboard({ setView }: { setView: any }) {
           {userInfoObj.map((obj) => {
             return (
               <Card
+              key={obj.title}
                 className="conatinerCardImage"
                 bordered={false}
                 style={{ width: 300 }}
@@ -103,8 +131,9 @@ function Dashboard({ setView }: { setView: any }) {
           <h1>Know Your Device</h1>
         </div>
         <div className="knowYourDevice_context">
-          <img src={Assests.DashboardImageCircut} alt="Assests" />
-          <div>
+        <div className="imageKnowContainer">
+        <img src={Assests.DashboardImageCircut} alt="Assests" />
+        </div>  <div>
             <p>
               The MCF8316A is a 4.5-V to 35-V, 8-A peak integrated three-phase
               gate driver IC with sensorless field-oriented control for motor

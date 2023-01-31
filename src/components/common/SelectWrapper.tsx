@@ -29,18 +29,35 @@ function SelectWrapper({
       <div>
         <>
           <FormControl fullWidth>
-            <InputLabel shrink={true} id="demo-simple-select-label">
+            <InputLabel shrink={true} id="selectlabelCommon">
               Select Device*
             </InputLabel>
             <Select
-              notched={true}
-              placeholder="Select Your Device"
-              labelId="demo-simple-select-label"
+                      sx={{
+                        color: "black",
+                        '.MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'black',
+                        },
+                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'black',
+                        },
+                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                          borderColor: 'black',
+                        },
+                        '.MuiSvgIcon-root ': {
+                          fill: "black !important",
+                        }
+                      }}
+            
+              // notched={true}
+              labelId="selectlabelCommon"
               id="demo-simple-select"
               // value={age}
               label="Select Device*"
               onChange={handleChange}
+              defaultValue="Select Your Device"
             >
+            <MenuItem value={"Select Your Device"}>Select Your Device</MenuItem>
               <MenuItem value={10}>MCF83164EVM</MenuItem>
               <MenuItem value={20}>MCF8315EVM</MenuItem>
               <MenuItem value={30}>MCF8316EVM</MenuItem>

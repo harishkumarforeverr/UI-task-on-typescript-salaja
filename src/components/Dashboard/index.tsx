@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 
 import "./index.scss";
 import QuickOptimizationWidget from "./QuickOptimizationWidget/QuickOptimizationWidget";
-function DashboardConatiner() {
+function DashboardContainer() {
   const [view, setView] = useState("Dashboard");
   const [open, setOpen] = useState(false);
   return (
@@ -16,4 +16,4 @@ function DashboardConatiner() {
   );
 }
 
-export default DashboardConatiner;
+export default DashboardContainer;

@@ -9,7 +9,7 @@ import Setting from "../Setting/Setting";
 import { Box } from "@mui/material";
 import DashboardConatiner from "../Dashboard";
 import "./mainRoute.scss";
-import PrivateRoute from "./routes/PrivateRoute";
+import PrivateRoute from "../../routes/PrivateRoute";
 import DrawerSide from "../common/Drawer/Drawer";
 
 const MainRoute = () => {
@@ -23,7 +23,7 @@ const MainRoute = () => {
               component={() => (
                 <div>
                   <DrawerSide>
-                    <DashboardConatiner />
+                  <DashboardConatiner />
                   </DrawerSide>
                 </div>
               )}
