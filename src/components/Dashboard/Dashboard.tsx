@@ -14,7 +14,7 @@ import { Assests } from "./Assests";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Card } from "antd";
 import { usersLinks } from "./pdf/index.js";
-import SelectWrapper from "../common/SelectWrapper";
+import SelectWrapper from "./SelectWrapper/SelectWrapper";
 function Dashboard({ setView }: { setView: any }) {
   // const [age, setAge] = React.useState<string>("");
 

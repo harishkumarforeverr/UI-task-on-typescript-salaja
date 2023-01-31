@@ -3,13 +3,9 @@ import { Card, Checkbox, Modal, Input } from "antd";
 import { Button, Switch, Collapse, Slider } from "antd";
 import "./Drawer.scss";
 import type { SliderMarks } from "antd/es/slider";
-import {
-  LeftOutlined,
-  RightOutlined, 
-  CloseOutlined,
-} from "@ant-design/icons";
+import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { Select, Tabs } from "antd";
- 
+
 import { DrawerImages } from "./Images";
 
 const { Panel } = Collapse;
@@ -20,7 +16,7 @@ const marks: SliderMarks = {
   50: "50",
   100: "100",
 };
-const motorStaticData=[
+const motorStaticData = [
   {
     title: "Algorithm State",
     active: true,
@@ -41,9 +37,8 @@ const motorStaticData=[
     active: true,
     subtitle: "0.00",
   },
-]
+];
 const initialmotorObj = [
-
   {
     title: "Motor Resistance",
     active: false,
@@ -291,7 +286,7 @@ const configObj3 = [
     subTitle: "TODO",
     disabled: false,
   },
-  
+
   {
     type: "select",
     title: "Motor Lock Mode [MTR_LCK_MODE]",
@@ -446,12 +441,11 @@ const ConfigSelect = ({ obj }: { obj: any }) => {
     </div>
   );
 };
-const ConfigText = ({ obj }: { obj: any }) => { 
+const ConfigText = ({ obj }: { obj: any }) => {
   return (
     <div className="configSelect">
       <p>{obj.title}</p>
       <p>{obj.subTitle}</p>
-      
     </div>
   );
 };
@@ -492,9 +486,8 @@ const ConfigureModel = () => {
             }
             if (obj.type == "select" && obj.option) {
               return <ConfigSelect obj={obj} />;
-            } 
+            }
             if (obj.type == "text") {
-             
               return <ConfigText obj={obj} />;
             }
           })}
@@ -508,7 +501,7 @@ const DrawerSide = (props: any) => {
   const [motorObj, setmotorObj] = useState(initialmotorObj);
   const [open, setOpen] = useState(false);
   const [drawerType, setDrawerType] = useState("");
-  const [checked,setchecked]=useState(true)
+  const [checked, setchecked] = useState(true);
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
@@ -549,54 +542,63 @@ const DrawerSide = (props: any) => {
           title: "Buck Regulator Undervoltage",
         },
       ],
+      value: 0,
     },
     {
       title: "Overcurrent Protection",
       subtitle: [],
+      value: 1,
     },
     {
       title: "Supply Power On Reset",
       subtitle: [],
+      value: 0,
     },
   ];
   const containerControllerFaultsData = [
     {
-    title: "Motor Lock [MTR_LCK]",
-    subtitle: [
-    {
-    title: "Abnormal Speed [ABN_SPEED]",
-    },
-    
-    {
-    title: "Abnormal BEMF [ABN_BEMF]",
-    },
-    {
-    title: "No Motor [NO_MTR]",
-    },
-    ],
-    },
-    {
-    title: "Lock Current Limit [LOCK_ILIMIT]",
-    subtitle: [],
+      title: "Motor Lock [MTR_LCK]",
+      subtitle: [
+        {
+          title: "Abnormal Speed [ABN_SPEED]",
+        },
+
+        {
+          title: "Abnormal BEMF [ABN_BEMF]",
+        },
+        {
+          title: "No Motor [NO_MTR]",
+        },
+      ],
+      value: 0,
     },
     {
-    title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
-    subtitle: [],
+      title: "Lock Current Limit [LOCK_ILIMIT]",
+      subtitle: [],
+      value: 1,
+    },
+    {
+      title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
+      subtitle: [],
+      value: 0,
     },
     {
       title: "Motor Undervoltage [MTR_OVER_VOLTAGE]",
       subtitle: [],
-      },
-      {
-        title: "Motor Overvoltage [MTR_UNDER_VOLTAGE]",
-        subtitle: [],
-        },
-        {
-          title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
-          subtitle: [],
-          },
-    ];
-    
+      value: 1,
+    },
+    {
+      title: "Motor Overvoltage [MTR_UNDER_VOLTAGE]",
+      subtitle: [],
+      value: 0,
+    },
+    {
+      title: "Hardware Lock Current Limit [HW_LOCK_ILIMIT]]",
+      subtitle: [],
+      value: 1,
+    },
+  ];
+
   const GateDriveContainer = () => {
     return (
       <div className="ControlFaultsContainer">
@@ -878,7 +880,7 @@ const DrawerSide = (props: any) => {
             <div className="drawerBody">
               {drawerType == "i2c" && (
                 <>
-                  <div>
+                  <div className="i2cContainer_drawer">
                     {" "}
                     <div>
                       <div className="drawerContainer">
@@ -895,13 +897,16 @@ const DrawerSide = (props: any) => {
                                   <div>
                                     {" "}
                                     <Switch
-                                    
-                                    onChange={(e)=>{
-                                      // console.log(e)
-                                      setchecked(e)
-                                    }}
-                                    size="small" defaultChecked />{" "}
-                                    <span className="Enabled">{checked?"Enabled":"Disabled"} </span>
+                                      onChange={(e) => {
+                                        // console.log(e)
+                                        setchecked(e);
+                                      }}
+                                      size="small"
+                                      defaultChecked
+                                    />{" "}
+                                    <span className="Enabled">
+                                      {checked ? "Enabled" : "Disabled"}{" "}
+                                    </span>
                                   </div>
                                 </div>
                                 <div className="drawerContainer_address">
@@ -922,7 +927,7 @@ const DrawerSide = (props: any) => {
                                   <p>I2C Speed Command Percentage</p>
                                   <div>
                                     <Slider
-                                    disabled={!checked}
+                                      disabled={!checked}
                                       marks={marks}
                                       step={null}
                                       defaultValue={37}
@@ -987,16 +992,14 @@ const DrawerSide = (props: any) => {
                         </div>
                         <div>
                           <div className="motorCardConatiner">
-                            {
-                              motorStaticData.map((moto) => {
-                                return (
-                                  <div className="motorCards">
-                                    <p> {moto.title}</p>
-                                    <h1>{moto.subtitle}</h1>
-                                  </div>
-                                );
-                              })
-                            }
+                            {motorStaticData.map((moto) => {
+                              return (
+                                <div className="motorCards">
+                                  <p> {moto.title}</p>
+                                  <h1>{moto.subtitle}</h1>
+                                </div>
+                              );
+                            })}
                             {motorObj
                               .filter(({ active }) => active)
                               .map((moto) => {

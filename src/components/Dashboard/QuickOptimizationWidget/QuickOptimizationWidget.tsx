@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import nextIcon from "../Assests/nextIcon.png";
 import "./QuickOptimizationWidget.scss";
 import { Button, Card, Checkbox, Select } from "antd";
-import SelectWrapper from "../../common/SelectWrapper";
+import SelectWrapper from "../SelectWrapper/SelectWrapper";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import { Assests } from "../Assests";
 import { CheckCircleOutlined } from "@ant-design/icons";

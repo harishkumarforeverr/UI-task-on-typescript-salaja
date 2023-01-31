@@ -21,9 +21,12 @@ const MainRoute = () => {
           element={
             <PrivateRoute
               component={() => (
-                <div>
+                <div style={{
+                  minHeight:"30rem"
+                }}>
                   <DrawerSide>
-                  <DashboardConatiner />
+                  {/* <DashboardConatiner /> */}
+                <div></div>
                   </DrawerSide>
                 </div>
               )}
