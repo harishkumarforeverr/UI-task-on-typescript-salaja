@@ -1,10 +1,12 @@
-import { BrowserWindow } from 'electron';
+import { BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
 import * as log from 'electron-log';
 import * as glob from 'glob';
-const isDev = require('electron-is-dev');
+// import Register from 'backend/Register/register';
 
+const isDev = require('electron-is-dev');
 const logger = log.scope("Main");
+
 
 
 export default class Main {
@@ -25,6 +27,12 @@ export default class Main {
 
     /** This function import all the IPC sender from the backend */
     private static loadBackend(){
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
+          ipcMain.on('upload_device_config', (event, arg) => {
+            console.log(arg); // prints "ping"
+
+        });
         logger.debug("Importing all the IPC sender from backend ");
         const files = glob.sync(path.join(__dirname, 'backend/**/*.js'));
         files.forEach((file) => {
@@ -52,6 +60,9 @@ export default class Main {
             width: 800, 
             height: 600, 
             webPreferences: {
+                nodeIntegration: true,
+                enableRemoteModule: true,
+                contextIsolation: false,
                 preload: path.join(__dirname, 'preload.js')
             }
         });

@@ -1,0 +1,1825 @@
+{
+    "device_name": "MCF8316B",
+    "register_type": "RAM",
+    "register": [
+        {
+            "register_address": "0x000000E0",
+            "ip_name": "Fault Status",
+            "register_acronym": "GATE_DRIVER_FAULT_STATUS",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "DRIVER_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Logic OR of FAULT status registers. Mirrors nFAULT pin.",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "30",
+                    "name": "BK_FLT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Buck Fault Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "29",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "28",
+                    "name": "OCP",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Over Current Protection Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "27",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "26",
+                    "name": "OVP",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Supply Overvoltage Protection Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "25",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "24",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "23",
+                    "name": "OTW",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overtemperature Warning Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "22",
+                    "name": "OTS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overtemperature Shutdown Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "21",
+                    "name": "OCP_HC",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent Status on High-side switch of OUTC",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "20",
+                    "name": "OCP_LC",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent Status on Low-side switch of OUTC",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "19",
+                    "name": "OCP_HB",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent Status on High-side switch of OUTB",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "18",
+                    "name": "OCP_LB",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent Status on Low-side switch of OUTB",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "17",
+                    "name": "OCP_HA",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent Status on High-side switch of OUTA",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "16",
+                    "name": "OCP_LA",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Overcurrent  Status on Low-side switch of OUTA",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "14",
+                    "name": "OTP_ERR",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "OTP Error",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "13",
+                    "name": "BUCK_OCP",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Buck Regulator Overcurrent Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "12",
+                    "name": "BUCK_UV",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Buck Regulator Undervoltage Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "11",
+                    "name": "VCP_UV",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Charge Pump Undervoltage Status Bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "10:0",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000E2",
+            "ip_name": "Fault Status",
+            "register_acronym": "CONTROLLER_FAULT_STATUS",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "CONTROLLER_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Logic OR of Controller FAULT status registers",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "30",
+                    "name": "OTW MCE",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates overtemperature MCE",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "29",
+                    "name": "IPD_FREQ_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates IPD frequency fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "28",
+                    "name": "IPD_T1_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates IPD T1 fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "27",
+                    "name": "IPD_T2_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates IPD T2 fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "26",
+                    "name": "BUS_CURRENT_LIMIT_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates status of Bus Current limit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "25",
+                    "name": "MPET_IPD_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates error during resistance and inductance measurement ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "24",
+                    "name": "MPET_BEMF_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates error during BEMF constant measurement ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "23",
+                    "name": "ABN_SPEED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Abnormal speed motor lock condition",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "22",
+                    "name": "ABN_BEMF",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Abnormal BEMF motor lock condition",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "21",
+                    "name": "NO_MTR",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates No Motor fault  ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "20",
+                    "name": "MTR_LCK",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates when one of the motor lock is triggered ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "19",
+                    "name": "LOCK_LIMIT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Lock Ilimit fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "18",
+                    "name": "HW_LOCK_LIMIT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Hardware Lock Ilimit fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "17",
+                    "name": "MTR_UNDER_VOLTAGE",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Motor Undervoltage fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "16",
+                    "name": "MTR_OVER_VOLTAGE",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates Motor Over voltage fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15",
+                    "name": "SPEED_LOOP_SATURATION",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates speed loop saturation",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "14",
+                    "name": "CURRENT_LOOP_SATURATION",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates current loop saturation",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "13:4",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0000h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "3",
+                    "name": "WATCHDOG_FAULT",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "indicates Watchdog fault",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "2",
+                    "name": "STL_ENABLE_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "STL Enable Status",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "1",
+                    "name": "STL_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "STL Status",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "0",
+                    "name": "APP_RESET",
+                    "access_type": "R",
+                    "reset": "0000h",
+                    "description": "App Reset",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000E4",
+            "ip_name": "System Status",
+            "register_acronym": "ALGO_STATUS",
+            "bit_field": [
+                {
+                    "position": "31:16",
+                    "name": "VOLT_MAG",
+                    "access_type": "R",
+                    "reset": "0000h",
+                    "description": "16-bit value indicating applied Modulation index. Modulation index applied = VOLT_MAG * 100 / 32768 % \n",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15:4",
+                    "name": "DUTY_CMD",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "12-bit value indicating decoded Duty command in PWM/Analog mode   \nDUTY_CMD (%) = DUTY_CMD/4096 * 100%.",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "3",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "2",
+                    "name": "SYS_ENABLE_FLAG",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "1 indicates GUI can control the register\n0 indicates GUI is still copying default parameters from shadow memory",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "1:0",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "000b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000E6",
+            "ip_name": "System Status",
+            "register_acronym": "MTR_PARAMS",
+            "bit_field": [
+                {
+                    "position": "31:24",
+                    "name": "MOTOR_R",
+                    "access_type": "R",
+                    "reset": "00h",
+                    "description": "8-bit value indicating MPET measured Motor Resistance  ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "23:16",
+                    "name": "MOTOR_BEMF_CONST ",
+                    "access_type": "R",
+                    "reset": "00h",
+                    "description": "8-bit value indicating MPET measured BEMF constant   ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15:8",
+                    "name": "MOTOR_L",
+                    "access_type": "R",
+                    "reset": "00h",
+                    "description": "8-bit value indicating MPET measured Motor Inductance  ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "7:0",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "00h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000E8",
+            "ip_name": "System Status",
+            "register_acronym": "ALGO_STATUS_MPET",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "MPET_R_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates status of Resistance measurement",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "30",
+                    "name": "MPET_L_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates status of Inductance measurement",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "29",
+                    "name": "MPET_KE_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates status of BEMF constant measurement",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "28",
+                    "name": "MPET_MECH_STATUS",
+                    "access_type": "R",
+                    "reset": "0b",
+                    "description": "Indicates status of mechanical parameter measurement",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "27:24",
+                    "name": "MPET_PWM_FREQ",
+                    "access_type": "R",
+                    "reset": "0000b",
+                    "description": "4-bit value indicating MPET recommended PWM switching\nfrequency based on electrical time constant",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "23:0",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "0000000h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000EA",
+            "ip_name": "Device Control",
+            "register_acronym": "ALGO_CTRL1",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "EEPROM_WRT",
+                    "access_type": "R/W",
+                    "reset": "0b",
+                    "description": "Write the configuration to EEPROM",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "30",
+                    "name": "EEPROM_READ",
+                    "access_type": "R/W",
+                    "reset": "0b",
+                    "description": "Read the default configuration from EEPROM",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "29",
+                    "name": "CLR_FLT",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Clears all faults",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "28",
+                    "name": "CLR_FLT_RETRY_COUNT",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Clears fault retry count",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "27:20",
+                    "name": "EEPROM_WRITE_ACCESS_KEY",
+                    "access_type": "W",
+                    "reset": "0x00h",
+                    "description": "EEPROM write access key for register DEVICE_CONFIG1",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "19:11",
+                    "name": "FORCED_ALIGN_ANGLE",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "9-bit value (in degrees) used during forced Align state ( FORCE_ALIGN_EN = 1)  \n\nAngle applied = FORCED_ALIGN_ANGLE % 360deg",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "10",
+                    "name": "WATCHDOG_TICKLE",
+                    "access_type": "R/W",
+                    "reset": "0b",
+                    "description": "RAM bit to tickle watchdog in I2C mode. This bit should be written 1 by external controller every EXT_WDT_CFG. The MCF will reset this bit",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "9:0",
+                    "name": "RESERVED",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000EC",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "ALGO_DEBUG1",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "OVERRIDE",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Use to control the SPD_CTRL bits.  \nIf OVERRIDE = '1', speed command can be written by the user through serial interface.",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "0b ",
+                            "description": " SPEED_CMD using Analog/PWM mode"
+                        },
+                        {
+                            "value": "1b ",
+                            "description": " SPEED_CMD using SPD_CTRL[11:0]"
+                        },
+                        {
+                            "value": ""
+                        }
+                    ]
+                },
+                {
+                    "position": "30:16",
+                    "name": "DIGITAL_SPEED_CTRL",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "Digital Speed Control   \nIf OVERRIDE = 0b1, then SPEED_CMD is control using DIGITAL_SPEED_CTRL",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15",
+                    "name": "CLOSED_LOOP_DIS",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Use to disable Closed loop",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "14",
+                    "name": "FORCE_ALIGN_EN",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Force Align State Enable",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "13",
+                    "name": "FORCE_SLOW_FIRST_CYCLE_EN",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Force Slow First Cycle Enable",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "12",
+                    "name": "FORCE_IPD_EN",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Force IPD Enable",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "11",
+                    "name": "FORCE_ISD_EN",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Force ISD enable",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "10",
+                    "name": "FORCE_ALIGN_ANGLE_SRC_SEL",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Force Align Angle State Source Select",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "9:0",
+                    "name": "FORCE_IQ_REF_SPEED_LOOP_DIS ",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "Sets IQ Ref (% of BASE_CURRENT) when speed loop is disabled \n   \nIf SPEED_LOOP_DIS = 0b1, then Iq_ref is control using  IQ_REF_SPEED_LOOP_DIS \n\niqRef = \n(FORCE_IQ_REF_SPEED_LOOP_DIS /500) * BASE_CURRENT if FORCE_IQ_REF_SPEED_LOOP_DIS  < 500\n\n(FORCE_IQ_REF_SPEED_LOOP_DIS  - 1024)/500 * BASE_CURRENT if FORCE_IQ_REF_SPEED_LOOP_DIS  > 512\n  \nValid values are 0 to 500 and 512 to 1000",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000EE",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "ALGO_DEBUG2",
+            "bit_field": [
+                {
+                    "position": "31",
+                    "name": "RESERVED",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "30:28",
+                    "name": "FORCE_RECIRCULATE_STOP_SECTOR",
+                    "access_type": "W",
+                    "reset": "000b",
+                    "description": "use to do the recirculation at specific sector during force motor stop condition",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "27",
+                    "name": "FORCE_RECIRCULATE_STOP_EN",
+                    "access_type": "W",
+                    "reset": "000b",
+                    "description": "Force recirculate stop Enable",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "26",
+                    "name": "CURRENT_LOOP_DIS",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Use to control the FORCE_VD_CURRENT_LOOP_DIS and FORCE_VQ_CURRENT_LOOP_DIS.  \nIf CURRENT_LOOP_DIS = '1', Current loop and speed loop is disabled",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "25:16",
+                    "name": "FORCE_VD_CURRENT_LOOP_DIS",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "Sets Vd when current loop speed loop are disabled   \nIf CURRENT_LOOP_DIS = 0b1, then Vd is control using  FORCE_VD_CURRENT_LOOP_DIS\n\nmdRef = \n(FORCE_VD_CURRENT_LOOP_DIS /500) if FORCE_VD_CURRENT_LOOP_DIS  < 500\n\n(FORCE_VD_CURRENT_LOOP_DIS  - 1024)/500 if FORCE_VD_CURRENT_LOOP_DIS  > 512\n\nValid values: 0 to 500 and 512 to 1000",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15:6",
+                    "name": "FORCE_VQ_CURRENT_LOOP_DIS",
+                    "access_type": "W",
+                    "reset": "000h",
+                    "description": "Sets Vq when current loop speed loop are disabled   \nIf CURRENT_LOOP_DIS = 0b1, then Vq is control using  FORCE_VQ_CURRENT_LOOP_DIS\n\nmqRef = \n(FORCE_VQ_CURRENT_LOOP_DIS /500) if FORCE_VQ_CURRENT_LOOP_DIS  < 500\n\n(FORCE_VQ_CURRENT_LOOP_DIS  - 1024)/500 if FORCE_VQ_CURRENT_LOOP_DIS  > 512\n\nValid values: 0 to 500 and 512 to 1000",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "5",
+                    "name": "MPET_CMD",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Initiates motor parameter measurement routine when set to 1",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "4",
+                    "name": "MPET_R",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Enables motor resistance measurement during motor parameter measurement routine ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "3",
+                    "name": "MPET_L",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Enables motor inductance measurement during motor parameter measurement routine ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "2",
+                    "name": "MPET_KE",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Enables motor BEMF constant measurement during motor parameter measurement routine ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "1",
+                    "name": "MPET_MECH",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Enables motor mechanical parameter measurement during motor parameter measurement routine ",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "0",
+                    "name": "MPET_WRITE_SHADOW",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Write measured parameters to shadow register when set to 1",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000F0",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "CURRENT_PI",
+            "bit_field": [
+                {
+                    "position": "31:16",
+                    "name": "CURRENT_LOOP_KI",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "10 bit for current loop ki\n\nSame Scaling as CURR_LOOP_KI",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15:0",
+                    "name": "CURRENT_LOOP_KP",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "10 bit for current loop kp\n\nSame Scaling as CURR_LOOP_KP",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000F2",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "SPEED_PI",
+            "bit_field": [
+                {
+                    "position": "31:16",
+                    "name": "SPEED_LOOP_KI",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "10 bit for Speed loop ki\n\nSame Scaling as SPD_LOOP_KI",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "15:0",
+                    "name": "SPEED_LOOP_KP",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "10 bit for Speed loop kp\n\nSame Scaling as SPD_LOOP_KP",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000F4",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "DAC_1",
+            "bit_field": [
+                {
+                    "position": "31:21",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "20:17",
+                    "name": "DACOUT1_ENUM_SCALING",
+                    "access_type": "W",
+                    "reset": "1000b",
+                    "description": "Multiplication Factor for DACOUT1\n\nAlgorithm Variable extracted from the address contained in DACOUT1_VAR_ADDR multiplied with 2^DACOUT1_ENUM_SCALING. \n\nDACOUT1_ENUM_SCALING comes into effect only if DACOUT1_SCALING is zero",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "16:13",
+                    "name": "DACOUT1_SCALING",
+                    "access_type": "W",
+                    "reset": "1000b",
+                    "description": "     Scaling factor for DACOUT1\n\nAlgorithm Variable extracted from the address contained in DACOUT1_VAR_ADDR scaled with DACOUT1_SCALING / 8. Actual voltage depends on DACOUT1_UNIPOLAR. \n\nIf DACOUT1_UNIPOLAR = 1, 0V == 0pu of algorithmVariable * DACOUT1_SCALING / 8, 3V == 1pu of algorithmVariable * DACOUT1_SCALING / 8\n\nIf DACOUT1_UNIPOLAR = 0, 0V == -1pu of algorithmVariable * DACOUT1_SCALING / 8, 3V == 1pu of algorithmVariable * DACOUT1_SCALING / 8",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "12",
+                    "name": "DACOUT1_UNIPOLAR",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Configures output of DACOUT1\n\nIf DACOUT1_UNIPOLAR = 1, 0V == 0pu of algorithmVariable * DACOUT1_SCALING / 16, 3V == 1pu of algorithmVariable * DACOUT1_SCALING / 16\n\nIf DACOUT1_UNIPOLAR = 0, 0V == -1pu of algorithmVariable * DACOUT1_SCALING / 16, 3V == 1pu of algorithmVariable * DACOUT1_SCALING / 16",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "11:0",
+                    "name": "DACOUT1_VAR_ADDR",
+                    "access_type": "R/W",
+                    "reset": "000h",
+                    "description": "12-bit address of variable to be monitored ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x000000F6",
+            "ip_name": "Algorithm Control",
+            "register_acronym": "DAC_2",
+            "bit_field": [
+                {
+                    "position": "31:23",
+                    "name": "RESERVED",
+                    "access_type": "R",
+                    "reset": "000h",
+                    "description": "Reserved",
+                    "reserved": true,
+                    "settings": []
+                },
+                {
+                    "position": "22:19",
+                    "name": "DACOUT2_ENUM_SCALING",
+                    "access_type": "W",
+                    "description": "Multiplication Factor for DACOUT2\n\nAlgorithm Variable extracted from the address contained in DACOUT2_VAR_ADDR multiplied with 2^DACOUT2_ENUM_SCALING. \n\nDACOUT2_ENUM_SCALING comes into effect only if DACOUT2_SCALING is zero",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "18:15",
+                    "name": "DACOUT2_SCALING",
+                    "access_type": "W",
+                    "reset": "1000b",
+                    "description": "     Scaling factor for DACOUT2\n\nAlgorithm Variable extracted from the address contained in DACOUT2_VAR_ADDR scaled with DACOUT2_SCALING / 8. Actual voltage depends on DACOUT2_UNIPOLAR. \n\nIf DACOUT2_UNIPOLAR = 1, 0V == 0pu of algorithmVariable * DACOUT2_SCALING / 8, 3V == 1pu of algorithmVariable * DACOUT2_SCALING / 8\n\nIf DACOUT2_UNIPOLAR = 0, 0V == -1pu of algorithmVariable * DACOUT2_SCALING / 8, 3V == 1pu of algorithmVariable * DACOUT2_SCALING / 8",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "14",
+                    "name": "DACOUT2_UNIPOLAR",
+                    "access_type": "W",
+                    "reset": "0b",
+                    "description": "Configures output of DACOUT2\n\nIf DACOUT2_UNIPOLAR = 1, 0V == 0pu of algorithmVariable * DACOUT2_SCALING / 16, 3V == 1pu of algorithmVariable * DACOUT2_SCALING / 16\n\nIf DACOUT2_UNIPOLAR = 0, 0V == -1pu of algorithmVariable * DACOUT2_SCALING / 16, 3V == 1pu of algorithmVariable * DACOUT2_SCALING / 16",
+                    "reserved": false,
+                    "settings": []
+                },
+                {
+                    "position": "0:13",
+                    "name": "DACOUT2_VAR_ADDR",
+                    "access_type": "R/W",
+                    "reset": "00h",
+                    "description": "14-bit address of variable to be monitored ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x5D2",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "SPEED_REF_CLOSED_LOOP",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "SPEED_REF_CLOSED_LOOP",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating reference for speed loop  \n\nSpeed Reference in closed loop (Hz) = (SPEED_REF_CLOSED_LOOP/ 2^27) * max_Speed- In Hz",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x474",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VM_VOLTAGE",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "VM_VOLTAGE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating dc bus voltage  \n\nDC Bus Voltage = VM_VOLTAGE * 60 / 2^27",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x472",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VOLTAGE_GAIN_FEEDBACK",
+            "bit_field": [
+                {
+                    "position": "15:0",
+                    "name": "VOLTAGE_GAIN_FEEDBACK",
+                    "access_type": "R",
+                    "reset": "0000h",
+                    "description": "16-bit value indicating voltage gain  ",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "00b ",
+                            "description": " 60V"
+                        },
+                        {
+                            "value": "01b ",
+                            "description": " 30V"
+                        },
+                        {
+                            "value": "10b ",
+                            "description": " 15V"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "register_address": "0x468",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "CSA_GAIN_FEEDBACK",
+            "bit_field": [
+                {
+                    "position": "15:0",
+                    "name": "CSA_GAIN_FEEDBACK",
+                    "access_type": "R",
+                    "reset": "0000h",
+                    "description": "16-bit value indicating current sense gain  ",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "00b ",
+                            "description": " MAX_CSA_GAIN * 8"
+                        },
+                        {
+                            "value": "01b ",
+                            "description": " MAX_CSA_GAIN * 4"
+                        },
+                        {
+                            "value": "10b ",
+                            "description": " MAX_CSA_GAIN * 2"
+                        },
+                        {
+                            "value": "11b ",
+                            "description": " MAX_CSA_GAIN * 1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "register_address": "0x47A",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_VOLTAGE_VA",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_VOLTAGE_VA",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Phase Voltage Va  during ISD\n\nPhase A voltage = PHASE_VOLTAGE_VA * 60 / (sqrt(3) * 2^27)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x47C",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_VOLTAGE_VB",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_VOLTAGE_VB",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Phase Voltage Vb  during ISD\n\nPhase B voltage = PHASE_VOLTAGE_VB * 60 / (sqrt(3) * 2^27)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x47E",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_VOLTAGE_VC",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_VOLTAGE_VC",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Phase Voltage Vc  during ISD\n\nPhase C voltage = PHASE_VOLTAGE_VC * 60 / (sqrt(3) * 2^27)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x604",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ID_REF_CLOSED_LOOP",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "ID_REF_CLOSED_LOOP",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Id_ref for flux loop  \n\nidRefClosedLoop = (ID_REF_CLOSED_LOOP / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x606",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IQ_REF_CLOSED_LOOP",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IQ_REF_CLOSED_LOOP",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Iq_ref for torque loop  \n\niqRefClosedLoop = (IQ_REF_CLOSED_LOOP / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4E2",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ID",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "ID",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated Id  \n\nid = (ID / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4E4",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IQ",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IQ",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated Iq  \n\niq = (IQ / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4E6",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VD",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "VD",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating applied Vd  \n\nvd = (VD / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4E8",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VQ",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "VQ",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating applied Vq  \n\nvq = (VQ / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4D2",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IALPHA",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IALPHA",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating calculated IALPHA  \n\niAlpha = (IALPHA / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4D4",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IBETA",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IBETA",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating calculated IBETA  \n\niBeta = (IBETA / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4D6",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VALPHA",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "VALPHA",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating calculated VALPHA  \n\nvAlpha = (VALPHA / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4D8",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "VBETA",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "VBETA",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating calculated VBETA  \n\nvBeta = (VBETA / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x410",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "BUS_CURRENT",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "BUS_CURRENT",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating bus current  \n\niBus = (BUS_CURRENT / 2^27) * Base_Current/8\n",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x6BE",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IPD_STATE",
+            "bit_field": [
+                {
+                    "position": "15:0",
+                    "name": "IPD_STATE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "16-bit value indicating current IPD state  \n",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "0000b ",
+                            "description": " IPD_INIT"
+                        },
+                        {
+                            "value": "0001b ",
+                            "description": " IPD_VECTOR_CONFIG"
+                        },
+                        {
+                            "value": "0010b ",
+                            "description": " IPD_RUN"
+                        },
+                        {
+                            "value": "0011b ",
+                            "description": " IPD_SLOW_RISE_CLOCK "
+                        },
+                        {
+                            "value": "0100b ",
+                            "description": " IPD_SLOW_FALL_CLOCK"
+                        },
+                        {
+                            "value": "0101b ",
+                            "description": " IPD_WAIT_CURRENT_DECAY"
+                        },
+                        {
+                            "value": "0110b ",
+                            "description": " IPD_GET_TIMES"
+                        },
+                        {
+                            "value": "0111b ",
+                            "description": " IPD_SET_NEXT_VECTOR"
+                        },
+                        {
+                            "value": "1000b ",
+                            "description": " IPD_CALC_SECTOR_RISE"
+                        },
+                        {
+                            "value": "1001b ",
+                            "description": " IPD_CALC_ROTOR_POSITION"
+                        },
+                        {
+                            "value": "1010b ",
+                            "description": " IPD_CALC_ANGLE"
+                        },
+                        {
+                            "value": "1011b ",
+                            "description": " IPD_COMPLETE"
+                        },
+                        {
+                            "value": "1100b ",
+                            "description": " IPD_FAULT"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "register_address": "0x680",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ISD_STATE",
+            "bit_field": [
+                {
+                    "position": "15:0",
+                    "name": "ISD_STATE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "16-bit value indicating current ISD state  \n",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "000b ",
+                            "description": " ISD_INIT"
+                        },
+                        {
+                            "value": "001b ",
+                            "description": " ISD_MOTOR_STOP_CHECK"
+                        },
+                        {
+                            "value": "010b ",
+                            "description": " ISD_ESTIM_INIT"
+                        },
+                        {
+                            "value": "011b ",
+                            "description": " ISD_RUN_MOTOR_CHECK"
+                        },
+                        {
+                            "value": "100b ",
+                            "description": " ISD_MOTOR_DIRECTION_CHECK"
+                        },
+                        {
+                            "value": "101b ",
+                            "description": " ISD_COMPLETE"
+                        },
+                        {
+                            "value": "110b ",
+                            "description": " ISD_FAULT"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "register_address": "0x190",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ALGORITHM_STATE",
+            "bit_field": [
+                {
+                    "position": "15:0",
+                    "name": "ALGORITHM_STATE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "16-bit value indicating current state of device  ",
+                    "reserved": false,
+                    "settings": [
+                        {
+                            "value": "00000b ",
+                            "description": " MOTOR_IDLE"
+                        },
+                        {
+                            "value": "00001b ",
+                            "description": " MOTOR_ISD"
+                        },
+                        {
+                            "value": "00010b ",
+                            "description": " MOTOR_TRISTATE"
+                        },
+                        {
+                            "value": "00011b ",
+                            "description": " MOTOR_BRAKE_ON_START"
+                        },
+                        {
+                            "value": "00100b ",
+                            "description": " MOTOR_IPD"
+                        },
+                        {
+                            "value": "00101b ",
+                            "description": " MOTOR_SLOW_FIRST_CYCLE"
+                        },
+                        {
+                            "value": "00110b ",
+                            "description": " MOTOR_ALIGN"
+                        },
+                        {
+                            "value": "00111b ",
+                            "description": " MOTOR_OPEN_LOOP"
+                        },
+                        {
+                            "value": "01000b ",
+                            "description": " MOTOR_CLOSED_LOOP_UNALIGNED"
+                        },
+                        {
+                            "value": "01001b ",
+                            "description": " MOTOR_CLOSED_LOOP_ALIGNED"
+                        },
+                        {
+                            "value": "01010b ",
+                            "description": " MOTOR_CLOSED_LOOP_ACTIVE_BRAKING"
+                        },
+                        {
+                            "value": "01011b ",
+                            "description": " MOTOR_SOFT_STOP"
+                        },
+                        {
+                            "value": "01100b ",
+                            "description": " MOTOR_RECIRCULATE_STOP"
+                        },
+                        {
+                            "value": "01101b ",
+                            "description": " MOTOR_BRAKE_ON_STOP"
+                        },
+                        {
+                            "value": "01110b ",
+                            "description": " MOTOR_FAULT"
+                        },
+                        {
+                            "value": "01111b ",
+                            "description": " MOTOR_MPET_MOTOR_STOP_CHECK"
+                        },
+                        {
+                            "value": "10000b ",
+                            "description": " MOTOR_MPET_MOTOR_STOP_WAIT"
+                        },
+                        {
+                            "value": "10001b ",
+                            "description": " MOTOR_MPET_MOTOR_BRAKE"
+                        },
+                        {
+                            "value": "10010b ",
+                            "description": " MOTOR_MPET_ALGORITHM_PARAMETERS_INIT"
+                        },
+                        {
+                            "value": "10011b ",
+                            "description": " MOTOR_MPET_RL_MEASURE"
+                        },
+                        {
+                            "value": "10100b ",
+                            "description": " MOTOR_MPET_KE_MEASURE"
+                        },
+                        {
+                            "value": "10101b ",
+                            "description": " MOTOR_MPET_STALL_CURRENT_MEASURE"
+                        },
+                        {
+                            "value": "10110b ",
+                            "description": " MOTOR_MPET_TORQUE_MODE"
+                        },
+                        {
+                            "value": "10111b ",
+                            "description": "  MOTOR_MPET_DONE"
+                        },
+                        {
+                            "value": "11000b ",
+                            "description": " MOTOR_MPET_FAULT"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "register_address": "0x440",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_CURRENT_A",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_CURRENT_A",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating measured current on Phase A  \n\niA = (PHASE_CURRENT_A / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x442",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_CURRENT_B",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_CURRENT_B",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating measured current on Phase B \n\niB = (PHASE_CURRENT_B / 2^27) * Base_Current/8 ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x444",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "PHASE_CURRENT_C",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "PHASE_CURRENT_C",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating measured current on Phase C  \n\niC = (PHASE_CURRENT_C / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x702",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IPD_ANGLE",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IPD_ANGLE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating measured IPD angle  \n\nipdAngle = (IPD_ANGLE / 2^27)  * 360 (Degree)\n",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x68A",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ISD_SPEED",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "ISD_SPEED",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating calculated speed during ISD state  \n\nisdSpeed = (ISD_SPEED / 2^27) * max_Speed- In Hz",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x53C",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "SPEED_REF_OPEN_LOOP",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "SPEED_REF_OPEN_LOOP",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Open Loop Speed\n\nopenLoopSpeedRef = (SPEED_REF_OPEN_LOOP / 2^27) * max_Speed- In Hz",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x54C",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IQ_REF_OPEN_LOOP",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IQ_REF_OPEN_LOOP",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Open Loop Current Reference\n\niqRefOpenLoop = (IQ_REF_OPEN_LOOP / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x524",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "IQ_REF_ROTOR_ALIGN",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "IQ_REF_ROTOR_ALIGN",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating Align Current Reference\n\niqRefRotorAlign = (IQ_REF_ROTOR_ALIGN / 2^27) * Base_Current/8",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x748",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "ED",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "ED",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated ED  \n\nEd = (ED / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x74A",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "EQ",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "EQ",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated EQ  \n\nEq = (EQ / 2^27) * 60 / sqrt(3)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x75C",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "THETA_EST",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "THETA_EST",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated rotor angle  \n\nestimatedAngle = (THETA_EST / 2^27)*360 (Degree)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x758",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "SPEED_FDBK",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "SPEED_FDBK",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated rotor speed  \n\nestimatedSpeed = (SPEED_FDBK / 2^27)*MAXIMUM_SPEED_HZ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4B6",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "SIN_COMMUTATION_ANGLE",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "SIN_COMMUTATION_ANGLE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating sine of commutation Angle \n\nsinCommutationAngle = (SIN_COMMUTATION_ANGLE / 2^27) ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x4B8",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "COS_COMMUTATION_ANGLE",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "COS_COMMUTATION_ANGLE",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating cosine of commutation Angle  \n\ncosCommutationAngle = (COS_COMMUTATION_ANGLE / 2^27)",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "register_address": "0x196",
+            "ip_name": "Algorithm Variables",
+            "register_acronym": "FG_SPEED_FDBK",
+            "bit_field": [
+                {
+                    "position": "31:0",
+                    "name": "FG_SPEED_FDBK",
+                    "access_type": "R",
+                    "reset": "00000000h",
+                    "description": "32-bit value indicating estimated rotor speed  \n\nestimatedSpeed = (FG_SPEED_FDBK / 2^27)*MAXIMUM_SPEED_HZ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        },
+        {
+            "bit_field": [
+                {
+                    "name": "                                      ",
+                    "reserved": false,
+                    "settings": []
+                }
+            ]
+        }
+    ]
+}

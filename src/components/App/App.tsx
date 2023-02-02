@@ -1,11 +1,13 @@
-import React from "react";
-import MainRoute from "../Route/MainRoute";
-import "./App.scss";
+import React from 'react';
+import MainRoute from "../Route/MainRoute"
+
+
+
 
 function App() {
   return (
     <>
-      <MainRoute />
+    <MainRoute/>
     </>
   );
 }

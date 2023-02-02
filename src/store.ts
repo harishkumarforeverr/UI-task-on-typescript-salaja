@@ -4,25 +4,23 @@ import {
   Action,
   combineReducers,
 } from "@reduxjs/toolkit";
-import { connectRouter, routerMiddleware } from "connected-react-router";
-import { createBrowserHistory } from "history";
+import { createRouterMiddleware, createRouterReducer } from '@lagunovsky/redux-react-router'
+import { createMemoryHistory } from "history";
 // import thunk from 'redux-thunk'
 
-export const history = createBrowserHistory();
-
-const initialState = {};
+export const history = createMemoryHistory();
+const routerMiddleware = createRouterMiddleware(history)
+//const initialState = {};
 
 const rootReducer = combineReducers({
-  router: connectRouter(history),
+  navigator: createRouterReducer(history) 
   //reducer: combineRed
 });
 
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).concat(
-      routerMiddleware(history)
-    ),
+    getDefaultMiddleware({ serializableCheck: false }).prepend(routerMiddleware)
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -5,42 +5,24 @@ import Header from "../Header/Header";
 import MPET from "../MPET/MPET";
 import Nav from "../Nav/Nav";
 import QuickTuning from "../QuickTuning/QuickTuning";
-import Setting from "../Setting/Setting";
-import { Box } from "@mui/material";
-import DashboardConatiner from "../Dashboard";
-import "./mainRoute.scss";
-import PrivateRoute from "../../routes/PrivateRoute";
-import DrawerSide from "../common/Drawer/Drawer";
 
+import { Box } from "@mui/material";
+import HardwareSetup from "../HardwareSetup/HardwareSetup";
 const MainRoute = () => {
   return (
-    <Box>
-      <Routes>
-        <Route
-          path={"/"}
-          element={
-            <PrivateRoute
-              component={() => (
-                <div style={{
-                  minHeight:"30rem"
-                }}>
-                  <DrawerSide>
-                  {/* <DashboardConatiner /> */}
-                <div></div>
-                  </DrawerSide>
-                </div>
-              )}
-            />
-          }
-        />
-        <Route path="/setting" element={<PrivateRoute component={Setting} />} />
-        <Route
-          path="/quick_tuning"
-          element={<PrivateRoute component={QuickTuning} />}
-        />
-        <Route path="/mpet" element={<PrivateRoute component={MPET} />} />
-      </Routes>
-    </Box>
+    <>
+      <Header />
+      <Nav />
+
+      <Box>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/setting" element={<HardwareSetup boardType={1} />} />
+          <Route path="/quick_tuning" element={<QuickTuning />} />
+          <Route path="/mpet" element={<MPET />} />
+        </Routes>
+      </Box>
+    </>
   );
 };
 

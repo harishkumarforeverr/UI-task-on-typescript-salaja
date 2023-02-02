@@ -3,7 +3,11 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Nav.css";
-
+import selectedHome from "../../images/Nav/home-Selected.svg";
+import unSelectedHome from "../../images/Nav/home-Unselected.svg";
+import mpetUnselected from "../../images/Nav/mpet-Unselected.svg";
+import quickUnselected from "../../images/Nav/quick-Unselected.svg";
+import settingUnselected from "../../images/Nav/setting-Unselected.svg";
 const Nav = () => {
   const [selectedButton, setSelectedButton] = useState("/");
   const onHandleSelect = (event: any, value: any) => {
@@ -28,11 +32,11 @@ const Nav = () => {
               <img
                 src={`${
                   selectedButton === "/"
-                    ? "Images/home-Selected.svg"
-                    : "Images/home-Unselected.svg"
+                    ? `${selectedHome}`
+                    : `${unSelectedHome}`
                 }`}
                 style={{ fill: "red!important" }}
-                alt="dd"
+                alt="HomeIcon"
               />
             </Box>
             <Typography
@@ -57,10 +61,10 @@ const Nav = () => {
               <img
                 src={`${
                   selectedButton === "/setting"
-                    ? "Images/setting-Unselected.svg"
-                    : "Images/setting-Unselected.svg"
+                    ? `${settingUnselected}`
+                    : `${settingUnselected}`
                 }`}
-                alt="dd"
+                alt="SettingIcon"
               />
             </Box>
             <Typography
@@ -85,10 +89,10 @@ const Nav = () => {
               <img
                 src={`${
                   selectedButton === "/quick_tuning"
-                    ? "Images/quick-Unselected.svg"
-                    : "Images/quick-Unselected.svg"
+                    ? `${quickUnselected}`
+                    : `${quickUnselected}`
                 }`}
-                alt="dd"
+                alt="QuickTuningIcon"
               />
             </Box>
             <Typography
@@ -113,10 +117,10 @@ const Nav = () => {
               <img
                 src={`${
                   selectedButton === "/mpet"
-                    ? "Images/mpet-Unselected.svg"
-                    : "Images/mpet-Unselected.svg"
+                    ? `${mpetUnselected}`
+                    : `${mpetUnselected}`
                 }`}
-                alt="dd"
+                alt="MPETIcon"
               />
             </Box>
             <Typography
