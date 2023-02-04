@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Checkbox, Modal, Input } from "antd";
 import { Button, Switch, Collapse, Slider } from "antd";
-import "./Drawer.scss";
+import "./Drawer.css";
 import type { SliderMarks } from "antd/es/slider";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { Select, Tabs } from "antd";
@@ -1062,7 +1062,7 @@ const DrawerSide = (props: any) => {
                       <div className="motorStatusConatiner">
                         <h1>MOTOR STATUS</h1>
                         <p>Algorithm Variable Status Select</p>
-                        <div className="selectMotor">
+                        <div className="selectMotorConatiner">
                           <Select
                             className="selectMotor"
                             placeholder="Algorithm Variable Status Select"
