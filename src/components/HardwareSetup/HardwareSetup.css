@@ -1,7 +1,7 @@
 .main_wrapper_container {
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 80 !important;
@@ -9,7 +9,7 @@
 .main_wrapper_container_dark {
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
   position: absolute;
   z-index: 800 !important;

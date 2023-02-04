@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { history, store } from "./store";
 import {  ReduxRouter,ReduxRouterSelector } from '@lagunovsky/redux-react-router';
-import "./components/Drawer/constants/Algorithm"
 
 type State = ReturnType<typeof store.getState>
 const routerSelector: ReduxRouterSelector<State> = (state) => state.navigator

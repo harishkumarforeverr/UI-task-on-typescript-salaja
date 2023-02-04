@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, Checkbox, Modal, Input } from "antd";
 import { Button, Switch, Collapse, Slider } from "antd";
 import "./Drawer.scss";
@@ -7,7 +7,6 @@ import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { Select, Tabs } from "antd";
 
 import { DrawerImages } from "./Images";
-import { getAvailabeSettings } from "./constants/Algorithm";
 
 const { Panel } = Collapse;
 
@@ -39,78 +38,78 @@ const motorStaticData = [
     subtitle: "0.00",
   },
 ];
-// const initialmotorObj = [
-//   {
-//     title: "Motor Resistance",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Motor Inductance",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Motor BEMF Constant",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Estimated Rotor Angle",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "CSA Gain",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "id Ref Closed Loop",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "iq Ref Closed Loop",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Vd",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Vq",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "Bus Current",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "ISD State",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "IPD State",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "ISD Speed",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-//   {
-//     title: "IPD Angle",
-//     active: false,
-//     subtitle: "0.00",
-//   },
-// ];
+const initialmotorObj = [
+  {
+    title: "Motor Resistance",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Motor Inductance",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Motor BEMF Constant",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Estimated Rotor Angle",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "CSA Gain",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "id Ref Closed Loop",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "iq Ref Closed Loop",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Vd",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Vq",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "Bus Current",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "ISD State",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "IPD State",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "ISD Speed",
+    active: false,
+    subtitle: "0.00",
+  },
+  {
+    title: "IPD Angle",
+    active: false,
+    subtitle: "0.00",
+  },
+];
 const configObj2 = [
   {
     type: "select",
@@ -120,6 +119,7 @@ const configObj2 = [
       {
         value: "OCP Level is 10A",
         label: "OCP Level is 10A",
+        
       },
       {
         value: "OCP Level is 15A",
@@ -167,8 +167,7 @@ const configObj2 = [
       {
         value: "3.5 A",
         label: "3.5 A",
-      },
-      {
+      },{
         value: "4 A",
         label: "4 A",
       },
@@ -204,6 +203,7 @@ const configObj2 = [
         value: "8 A",
         label: "8 A",
       },
+      
     ],
   },
   {
@@ -246,8 +246,7 @@ const configObj2 = [
       {
         value: "3.5 A",
         label: "3.5 A",
-      },
-      {
+      },{
         value: "4 A",
         label: "4 A",
       },
@@ -313,44 +312,34 @@ const configObj2 = [
       {
         value: "4 s",
         label: "4 s",
-      },
-      {
+      },{
         value: "5 s",
         label: "5 s",
-      },
-      {
+      },{
         value: "6 s",
         label: "6 s",
-      },
-      {
+      },{
         value: "7 s",
         label: "7 s",
-      },
-      {
+      },{
         value: "8 s",
         label: "8 s",
-      },
-      {
+      },{
         value: "9 s",
         label: "9 s",
-      },
-      {
+      },{
         value: "10 s",
         label: "10 s",
-      },
-      {
+      },{
         value: "11 s",
         label: "11 s",
-      },
-      {
+      },{
         value: "12 s",
         label: "12 s",
-      },
-      {
+      },{
         value: "13 ms",
         label: "13 s",
-      },
-      {
+      },{
         value: "14 s",
         label: "14 s",
       },
@@ -365,6 +354,7 @@ const configObj2 = [
         value: "130%",
         label: "130%",
       },
+      
     ],
   },
   {
@@ -377,6 +367,7 @@ const configObj2 = [
         value: "10%",
         label: "10%",
       },
+      
     ],
   },
   {
@@ -388,6 +379,7 @@ const configObj2 = [
         value: "0.05 A",
         label: "0.05 A",
       },
+      
     ],
   },
   {
@@ -419,6 +411,7 @@ const configObj3 = [
         value: "Over Current is not reported and no action is taken",
         label: "Over Current is not reported and no action is taken",
       },
+      
     ],
   },
   {
@@ -432,6 +425,7 @@ const configObj3 = [
         label:
           "Hardware Lock detection current limit causes latched fault; nfault active; Gate driver is tristated",
       },
+      
     ],
   },
   {
@@ -445,6 +439,7 @@ const configObj3 = [
         label:
           "Ilimit lock detection causes latched fault; nfault active; Gate driver is tristated",
       },
+      
     ],
   },
   {
@@ -671,28 +666,14 @@ const ConfigureModel = () => {
 };
 const DrawerSide = (props: any) => {
   const [showConfigModel, setshowConfigModel] = useState(false);
-  const [motorObj, setmotorObj] = useState([]);
+  const [motorObj, setmotorObj] = useState(initialmotorObj);
   const [open, setOpen] = useState(false);
   const [drawerType, setDrawerType] = useState("");
   const [checked, setchecked] = useState(true);
   const onChange = (key: string | string[]) => {
     console.log(key);
   };
-  useEffect(() => {
-    // initialmotorObj
 
-    // {value: '00b ', description: ' 60V'}
-    const data = getAvailabeSettings();
-    const newData = data.map((obj: any) => {
-      const { description, value } = obj;
-      return {
-        title: description,
-        active: false,
-        subtitle: value,
-      };
-    });
-    setmotorObj(newData)
-  }, []);
   const closeTheConfigModel = () => {
     setshowConfigModel(false);
   };
@@ -884,7 +865,7 @@ const DrawerSide = (props: any) => {
     },
   ];
   const handeTheCheckBoxMotor = (index: number) => {
-    const newData:any = motorObj.map((obj:any, i) => {
+    const newData = motorObj.map((obj, i) => {
       if (i == index) {
         return {
           ...obj,
@@ -1086,7 +1067,7 @@ const DrawerSide = (props: any) => {
                             className="selectMotor"
                             placeholder="Algorithm Variable Status Select"
                             dropdownRender={() => {
-                              const jsx = motorObj.map((obj:any, index) => {
+                              const jsx = motorObj.map((obj, index) => {
                                 return (
                                   <div
                                     style={{
@@ -1140,7 +1121,7 @@ const DrawerSide = (props: any) => {
                             })}
                             {motorObj
                               .filter(({ active }) => active)
-                              .map((moto:any) => {
+                              .map((moto) => {
                                 return (
                                   <div className="motorCards">
                                     <p> {moto.title}</p>
