@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Card, Checkbox, Modal, Input } from "antd";
 import { Button, Switch, Collapse, Slider } from "antd";
-import "./Drawer.css";
+import "./I2CandFault.css";
 import type { SliderMarks } from "antd/es/slider";
 import { LeftOutlined, RightOutlined, CloseOutlined } from "@ant-design/icons";
 import { Select, Tabs } from "antd";
 
-import { DrawerImages } from "./Images";
+import { I2CandFaultImages } from "./Images";
 
 const { Panel } = Collapse;
 
@@ -664,11 +664,11 @@ const ConfigureModel = () => {
     </div>
   );
 };
-const DrawerSide = (props: any) => {
+const I2CandFault = (props: any) => {
   const [showConfigModel, setshowConfigModel] = useState(false);
   const [motorObj, setmotorObj] = useState(initialmotorObj);
   const [open, setOpen] = useState(false);
-  const [drawerType, setDrawerType] = useState("");
+  const [I2CandFaultType, setI2CandFaultType] = useState("");
   const [checked, setchecked] = useState(true);
   const onChange = (key: string | string[]) => {
     console.log(key);
@@ -784,7 +784,7 @@ const DrawerSide = (props: any) => {
                   {/* <div className="bigCircle"></div> */}
                   <img
                     className="redBubbleCircle"
-                    src={DrawerImages.redBubble}
+                    src={I2CandFaultImages.redBubble}
                   />
                   <div className="bigCircle_title"> {obj.title}</div>
                 </div>
@@ -795,7 +795,7 @@ const DrawerSide = (props: any) => {
                         {/* <div className="bigCircle"></div> */}
                         <img
                           className="redBubbleCircle"
-                          src={DrawerImages.redBubble}
+                          src={I2CandFaultImages.redBubble}
                         />
                         <div className="bigCircle_title"> {subObj.title}</div>
                       </div>
@@ -826,7 +826,7 @@ const DrawerSide = (props: any) => {
                   {/* <div className="bigCircle"></div> */}
                   <img
                     className="redBubbleCircle"
-                    src={DrawerImages.redBubble}
+                    src={I2CandFaultImages.redBubble}
                   />
                   <div className="bigCircle_title"> {obj.title}</div>
                 </div>
@@ -837,7 +837,7 @@ const DrawerSide = (props: any) => {
                         {/* <div className="bigCircle"></div> */}
                         <img
                           className="redBubbleCircle"
-                          src={DrawerImages.redBubble}
+                          src={I2CandFaultImages.redBubble}
                         />
                         <div className="bigCircle_title"> {subObj.title}</div>
                       </div>
@@ -898,38 +898,38 @@ const DrawerSide = (props: any) => {
           style={{
             marginLeft: "auto",
           }}
-          className="drawerConatiner_Parent"
+          className="I2CandFaultConatiner_Parent"
         >
           <div className="appConatiner_DashboardConatiner">
-            {/* <DrawerSide
+            {/* <I2CandFault
               open={open}
               setOpen={setOpen}
-              drawerType={drawerType}
-              setDrawerType={setDrawerType}
+              I2CandFaultType={I2CandFaultType}
+              setI2CandFaultType={setI2CandFaultType}
              
             /> */}
             <div
               style={
                 {
-                  // opacity: open && drawerType == "i2c" ? 1 : 0.5,
+                  // opacity: open && I2CandFaultType == "i2c" ? 1 : 0.5,
                 }
               }
               className={
-                open ? "appConatiner_drawer_expand" : "appConatiner_drawer"
+                open ? "appConatiner_I2CandFault_expand" : "appConatiner_I2CandFault"
               }
             >
               <div
                 onClick={() => {
-                  if (drawerType == "i2c" && open) {
+                  if (I2CandFaultType == "i2c" && open) {
                     setOpen(false);
                   } else {
                     setOpen(true);
                   }
-                  setDrawerType("i2c");
+                  setI2CandFaultType("i2c");
                 }}
                 className="i2cControl"
               >
-                {drawerType == "i2c" ? (
+                {I2CandFaultType == "i2c" ? (
                   <RightOutlined className="rightIcon" />
                 ) : (
                   <LeftOutlined className="rightIcon" />
@@ -937,8 +937,8 @@ const DrawerSide = (props: any) => {
                 <span className="i2cLabel">
                   <p
                     className={
-                      open && drawerType === "i2c"
-                        ? "enabledTheDrawerLabel"
+                      open && I2CandFaultType === "i2c"
+                        ? "enabledTheI2CandFaultLabel"
                         : ""
                     }
                   >
@@ -950,28 +950,28 @@ const DrawerSide = (props: any) => {
             <div
               className={
                 open
-                  ? "appConatiner_drawer_expand faults_collapse"
-                  : "appConatiner_drawer faults_expanded"
+                  ? "appConatiner_I2CandFault_expand faults_collapse"
+                  : "appConatiner_I2CandFault faults_expanded"
               }
             >
               <div
                 style={
                   {
-                    // opacity: open && drawerType == "faults" ? 1 : 0.5,
+                    // opacity: open && I2CandFaultType == "faults" ? 1 : 0.5,
                   }
                 }
                 onClick={() => {
                   // setOpen(true);
-                  if (drawerType == "faults" && open) {
+                  if (I2CandFaultType == "faults" && open) {
                     setOpen(false);
                   } else {
                     setOpen(true);
                   }
-                  setDrawerType("faults");
+                  setI2CandFaultType("faults");
                 }}
                 className="faultsControl"
               >
-                {drawerType == "faults" ? (
+                {I2CandFaultType == "faults" ? (
                   <RightOutlined className="rightIcon" />
                 ) : (
                   <LeftOutlined className="rightIcon" />
@@ -979,14 +979,14 @@ const DrawerSide = (props: any) => {
                 <span className="faultsLabel">
                   <p
                     className={
-                      open && drawerType === "faults"
-                        ? "enabledTheDrawerLabel"
+                      open && I2CandFaultType === "faults"
+                        ? "enabledTheI2CandFaultLabel"
                         : ""
                     }
                   >
                     Faults
                   </p>
-                  {drawerType == "faults" && open ? (
+                  {I2CandFaultType == "faults" && open ? (
                     <div className="smallCircle redColor  expandedGreen"></div>
                   ) : (
                     <div className="smallCircle greenColor expandedGreen"></div>
@@ -996,13 +996,13 @@ const DrawerSide = (props: any) => {
             </div>
           </div>
           {open && (
-            <div className="drawerBody">
-              {drawerType == "i2c" && (
+            <div className="I2CandFaultBody">
+              {I2CandFaultType == "i2c" && (
                 <>
-                  <div className="i2cContainer_drawer">
+                  <div className="i2cContainer_I2CandFault">
                     {" "}
                     <div>
-                      <div className="drawerContainer">
+                      <div className="I2CandFaultContainer">
                         <>
                           <Collapse
                             defaultActiveKey={["1"]}
@@ -1011,7 +1011,7 @@ const DrawerSide = (props: any) => {
                           >
                             <Panel header="I2C CONTROLS" key="1">
                               <div>
-                                <div className="drawerContainer_label">
+                                <div className="I2CandFaultContainer_label">
                                   <p>Speed Control via I2C</p>
                                   <div>
                                     {" "}
@@ -1028,7 +1028,7 @@ const DrawerSide = (props: any) => {
                                     </span>
                                   </div>
                                 </div>
-                                <div className="drawerContainer_address">
+                                <div className="I2CandFaultContainer_address">
                                   <div>
                                     <p>I2C Target Address</p>
                                     <Input
@@ -1042,7 +1042,7 @@ const DrawerSide = (props: any) => {
                                     </Button>
                                   </div>
                                 </div>
-                                <div className="drawerContainer_precentage">
+                                <div className="I2CandFaultContainer_precentage">
                                   <p>I2C Speed Command Percentage</p>
                                   <div>
                                     <Slider
@@ -1136,9 +1136,9 @@ const DrawerSide = (props: any) => {
                   </div>
                 </>
               )}
-              {drawerType == "faults" && (
+              {I2CandFaultType == "faults" && (
                 <>
-                  <div className="faltsDrawerConatiner">
+                  <div className="faltsI2CandFaultConatiner">
                     <div>
                       <Tabs
                         defaultActiveKey="1"
@@ -1166,4 +1166,4 @@ const DrawerSide = (props: any) => {
   );
 };
 
-export default DrawerSide;
+export default I2CandFault;

@@ -1,20 +1,20 @@
-.drawerContainer {
+.I2CandFaultContainer {
   background: #f2f8fb;
   border: 1px solid #f2f8fb;
   border-radius: 6px;
 }
-.drawerContainer .ant-collapse-arrow {
+.I2CandFaultContainer .ant-collapse-arrow {
   font-size: 13px;
   transform: rotate(180deg);
 }
-.drawerContainer .ant-collapse-arrow svg {
+.I2CandFaultContainer .ant-collapse-arrow svg {
   font-size: 13px;
   transform: rotate(270deg);
 }
-.drawerContainer .ant-collapse-content-box {
+.I2CandFaultContainer .ant-collapse-content-box {
   background: #f2f8fb;
 }
-.drawerContainer .ant-collapse-header-text {
+.I2CandFaultContainer .ant-collapse-header-text {
   font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
@@ -22,8 +22,8 @@
   line-height: 18px;
   color: #1c99c4;
 }
-.drawerContainer .ant-switch,
-.drawerContainer .ant-slider-track {
+.I2CandFaultContainer .ant-switch,
+.I2CandFaultContainer .ant-slider-track {
   background: #118899;
 }
 
@@ -33,12 +33,12 @@
 #components-slider-demo-mark .ant-slider-with-marks {
   margin-bottom: 44px;
 }
-.drawerContainer .drawerContainer_label {
+.I2CandFaultContainer .I2CandFaultContainer_label {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-.drawerContainer_label p {
+.I2CandFaultContainer_label p {
   opacity: 0.9;
   width: 138px;
   height: 18px;
@@ -49,7 +49,7 @@
   line-height: 18px;
   color: #323232;
 }
-.drawerContainer_label .Enabled {
+.I2CandFaultContainer_label .Enabled {
   font-family: Helvetica;
   font-style: normal;
   font-weight: 400;
@@ -57,12 +57,12 @@
   line-height: 18px;
   color: #323232;
 }
-.drawerContainer .drawerContainer_address {
+.I2CandFaultContainer .I2CandFaultContainer_address {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.drawerContainer_address p {
+.I2CandFaultContainer_address p {
   opacity: 0.9;
   width: 135px;
   height: 18px;
@@ -76,7 +76,7 @@
   line-height: 18px;
   color: #323232;
 }
-.drawerContainer_address .inputTag {
+.I2CandFaultContainer_address .inputTag {
   box-sizing: border-box;
   width: 96%;
   height: 36px;
@@ -85,7 +85,7 @@
   border: 1px solid #9c9c9c;
   border-radius: 6px;
 }
-.drawerContainer_address .btn {
+.I2CandFaultContainer_address .btn {
   box-sizing: border-box;
 
   margin-top: 25px;
@@ -103,10 +103,10 @@
   border-radius: 6px;
 }
 
-.drawerContainer .drawerContainer_precentage {
+.I2CandFaultContainer .I2CandFaultContainer_precentage {
   margin-top: 1rem;
 }
-.drawerContainer_precentage p {
+.I2CandFaultContainer_precentage p {
   opacity: 0.9;
   width: 181px;
   height: 18px;
@@ -120,19 +120,19 @@
 
   color: #323232;
 }
-.drawerContainer_precentage .ant-slider-step {
+.I2CandFaultContainer_precentage .ant-slider-step {
   margin-top: 1px;
 }
-.drawerContainer_precentage .ant-slider-handle {
+.I2CandFaultContainer_precentage .ant-slider-handle {
   top: 3px;
 }
-.drawerContainer_precentage .ant-slider-mark-text {
+.I2CandFaultContainer_precentage .ant-slider-mark-text {
   top: 10px;
 }
-.drawerContainer_precentage .ant-slider-track {
+.I2CandFaultContainer_precentage .ant-slider-track {
   height: 9px;
 }
-.drawerContainer_precentage .ant-slider {
+.I2CandFaultContainer_precentage .ant-slider {
   top: 10px;
 }
 .motorStatusConatiner {
@@ -229,11 +229,11 @@
   color: #767676;
 }
 
-.i2cContainer_drawer {
+.i2cContainer_I2CandFault {
   margin-left: 10px;
   margin-right: 10px;
 }
-.faltsDrawerConatiner {
+.faltsI2CandFaultConatiner {
   background: #f2f8fb;
   position: relative;
   width: 24rem;
@@ -244,22 +244,22 @@
   margin-left: 10px;
   margin-right: 10px;
 }
-.faltsDrawerConatiner .ant-tabs-nav-list {
+.faltsI2CandFaultConatiner .ant-tabs-nav-list {
   display: grid !important;
   grid-template-columns: 1fr 1fr;
 }
-.faltsDrawerConatiner .ant-tabs-nav-wrap {
+.faltsI2CandFaultConatiner .ant-tabs-nav-wrap {
   display: grid !important;
 }
-.faltsDrawerConatiner .ant-tabs-tab {
+.faltsI2CandFaultConatiner .ant-tabs-tab {
   margin: 0 !important;
   padding-left: 10px !important;
 }
-.faltsDrawerConatiner .ant-drawer-body {
+.faltsI2CandFaultConatiner .ant-I2CandFault-body {
   padding-top: 0;
 }
 
-.faltsDrawerConatiner .ant-tabs-ink-bar {
+.faltsI2CandFaultConatiner .ant-tabs-ink-bar {
   background: linear-gradient(0deg, #cc0000, #cc0000),
     linear-gradient(0deg, #d4e5ee, #d4e5ee) !important;
 }
@@ -277,10 +277,10 @@
   padding: 0;
 }
 
-.faltsDrawerConatiner .ant-tabs-tab-active h1 {
+.faltsI2CandFaultConatiner .ant-tabs-tab-active h1 {
   color: #09607e;
 }
-.faltsDrawerConatiner .ant-tabs-tab-active {
+.faltsI2CandFaultConatiner .ant-tabs-tab-active {
   background: #d4e5ee;
   padding: 5%;
 }
@@ -341,13 +341,13 @@
 
   color: #323232;
 }
-.I2DrawerConatiner {
+.I2I2CandFaultConatiner {
   background: #f2f8fb;
   position: relative;
   width: 24rem;
   margin-left: auto;
 }
-.drawerConatiner_Parent {
+.I2CandFaultConatiner_Parent {
   display: flex;
   position: relative;
   margin-left: auto; 
@@ -356,20 +356,20 @@
   background: white;
   margin-top: 65px;
 }
-.drawerBody {
+.I2CandFaultBody {
   min-width: 22rem;
   margin-right: 3px;
 }
-.appConatiner_DashboardConatiner .appConatiner_drawer {
+.appConatiner_DashboardConatiner .appConatiner_I2CandFault {
   position: absolute;
   right: 0;
   top: 1rem;
   z-index: 100;
 }
-.appConatiner_drawer p {
+.appConatiner_I2CandFault p {
   opacity: 0.5;
 }
-.appConatiner_DashboardConatiner .appConatiner_drawer_expand {
+.appConatiner_DashboardConatiner .appConatiner_I2CandFault_expand {
   position: absolute;
   left: -2.19rem;
   top: 3rem;
@@ -412,7 +412,7 @@
 .rightIcon {
   font-size: 0.81rem;
 }
-.appConatiner_DashboardConatiner .enabledTheDrawerLabel {
+.appConatiner_DashboardConatiner .enabledTheI2CandFaultLabel {
   color: #1c99c4 !important;
   opacity: 1 !important;
 }

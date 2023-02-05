@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import React, { useState } from "react";
 import TIBoardHardwareSetupData from "./HardwareSetupData";
 import "./HardwareSetup.css";
-import DrawerSide from "../Drawer/Drawer";
+import I2CandFault from "../I2CandFault/I2CandFault";
 
 const HardwareSetup = ({ boardType }: any) => {
   const [focusStep, setFocusStep] = useState(0);
@@ -32,7 +32,7 @@ const HardwareSetup = ({ boardType }: any) => {
   };
 
   return (
-    <DrawerSide>
+    <I2CandFault>
 
     
     <Box
@@ -195,7 +195,7 @@ const HardwareSetup = ({ boardType }: any) => {
         </Box>
       </Box>
     </Box>
-    </DrawerSide> 
+    </I2CandFault> 
   );
 };
 

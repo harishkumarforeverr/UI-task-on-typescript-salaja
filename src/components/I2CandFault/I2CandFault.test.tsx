@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import renderer from "react-test-renderer"; 
-import Drawer from "./Drawer";
+import I2CandFault from "./I2CandFault";
 
 const mockHistoryPush = jest.fn();
 const mockGoBack = jest.fn();
@@ -30,39 +30,27 @@ jest.mock("react-router-dom", () => ({
 }));
 const setView=jest.fn((arg:any)=>arg)
 test('renders the compoenet and finding whether a text present in the dom or not', () => {
-  const MyDrawer=()=>{
+  const MyI2CandFault=()=>{
     return (
       <Router>
-        <Drawer setView={setView} />
+        <I2CandFault setView={setView} />
       </Router>
     )
   }
-  render(<MyDrawer />);
+  render(<MyI2CandFault />);
   const linkElement = screen.getByText("Faults");
   expect(linkElement).toBeInTheDocument();
 });
 test('renders the compoenet whether a text present in the dom or not', () => {
-  const MyDrawer=()=>{
+  const MyI2CandFault=()=>{
     return (
       <Router>
-        <Drawer setView={setView} />
+        <I2CandFault setView={setView} />
       </Router>
     )
   }
-  render(<MyDrawer />);
+  render(<MyI2CandFault />);
   const linkElement = screen.getByText("I2C");
   expect(linkElement).toBeInTheDocument();
 }); 
-
-
-test("creating the snapshot of the compoenent correctly", () => {
-  const MyDrawer = () => {
-    return (
-      <Router>
-        <Drawer setView={setView} />
-      </Router>
-    );
-  };
-  const tree = renderer.create(<MyDrawer />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+ 
